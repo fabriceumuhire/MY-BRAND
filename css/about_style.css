@@ -1,0 +1,30 @@
+body {
+    background-color: #FFFFFF;
+    opacity: 1;
+
+}
+
+header {
+    position: absolute;
+    width: 1920px;
+    height: 110px;
+    left: 0px;
+    top: 0px;
+
+    background: #739FE1;
+}
+.paragraph {
+    position: absolute;
+    width: 898px;
+    height: 486px;
+    left: 115px;
+    top: 315px;
+
+    font-family: PT Sans Narrow;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 47px;
+
+    color: #000000;
+}
