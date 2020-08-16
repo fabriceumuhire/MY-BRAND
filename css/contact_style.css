@@ -1,6 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font: 15px/1.5 Georgia, 'Times New Roman', Times, serif;
-    padding: 0;
     margin: 0;
     width: 100%;
     height: 100%;
@@ -8,12 +13,25 @@ body {
     position: relative;
     padding-bottom: 124px;
     min-height: 100vh;
+    
 }
 
 .container {
     width: 95%;
     margin: 50px;
     overflow: hidden;
+}
+
+.darkgray{
+    padding: 15px;
+    height: 280px;
+    width: 320px;
+    padding-left: 20px;
+    margin-top: 0px;
+    background: #7e7979;
+    border: 0;
+    border: 5px solid #739FE1;
+    border-radius: 10px;
 }
 
 
@@ -31,12 +49,11 @@ ul {
 
 .button_1{
     height: 38px;
+    width: 70px;
     background: #739FE1;
     border-radius: 10%;
     color: #FFFFFF;
 }
-
-
 
 header a {
     color: #FFFFFF;
@@ -61,7 +78,7 @@ header #logo img {
      margin-left: 0px;
  }
 
- header nav {
+header nav {
      float: right;
      margin-top: 75px;
  }
@@ -70,54 +87,54 @@ header nav img {
     width: 30px;
 }
 
- header a:hover{
+header a:hover{
      color: teal;
      font-weight: bold;
  }
 
- #boxes{
+#main{
      margin-top: 20px;
  }
 
- #boxes .box2{
+#main .box{
      float: left;
      width: 30%;
+     border: #F4F4F4;
      padding: 10px;
      font-size: 28px;
      text-align: center;
-     background: #929292;
-     height: 360px;
-     margin-top: 0px;
  }
 
- #boxes .box{
-    float: left;
+
+
+article #main-col{
+    float: right;
+    width: 50%;
+    margin-top: 20px;
+    margin-right: 40px;
+    font-size: large;
+    font-weight: bolder;
+}
+
+aside#sidebar {
+    float: right;
     width: 30%;
-    padding: 10px;
-    font-size: 28px;
-    text-align: center;
-    height: 360px;
-    margin-top: 0px;
-    background: #C5C5C5;
-    border: 0;
+    margin-top: 50px;
+    margin-right: 40px;
+    font-size: xx-large;
+    font-weight: bolder;
 }
 
-#boxes .box1{
-    float: left;
-    width: 30%;
-    padding: 10px;
-    font-size: 28px;
-    text-align: center;
-    height: 360px;
-    margin-top: 0px;
-    background: #B1B1B1;
-    border: 0;
+aside #sidebar .quote input {
+    width: 120px;
+    padding: 5px;
 }
 
-#boxes .box:hover{
-    font-size: bold;
+aside #sidebar .quote textarea{
+    width: 120px;
+    height: 80px;
+    padding: 5px;
 }
-
 
 
 footer {
@@ -141,4 +158,10 @@ footer li {
     float: left;
     display: inline;
     padding: 0 10px 0 10px;
+}
+
+@media(max-width: 768px) {
+    body{
+        display: none;
+    }
 }
