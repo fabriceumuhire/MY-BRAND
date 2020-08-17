@@ -1,6 +1,5 @@
 body {
     font: 15px/1.5 Georgia, 'Times New Roman', Times, serif;
-    padding: 0;
     margin: 0;
     width: 100%;
     height: 100%;
@@ -8,11 +7,10 @@ body {
     position: relative;
     padding-bottom: 124px;
     min-height: 100vh;
-    background-image: url('./img/review6.jpg');
 }
 
 .container {
-    width: 95%;
+    width: 100%;
     margin: 50px;
     overflow: hidden;
 }
@@ -36,8 +34,6 @@ ul {
     border-radius: 10%;
     color: #FFFFFF;
 }
-
-
 
 header a {
     color: #FFFFFF;
@@ -76,51 +72,10 @@ header nav img {
      font-weight: bold;
  }
 
-#image {
-    background-image: url('./img/review6.jpg');
-  }
 
- #boxes{
-     margin-top: 20px;
- }
-
- #boxes .box2{
-     float: left;
-     width: 30%;
-     padding: 10px;
-     font-size: 28px;
-     text-align: center;
-     background: #929292;
-     height: 360px;
-     margin-top: 0px;
- }
-
- #boxes .box{
+article#main-col{
     float: left;
-    width: 30%;
-    padding: 10px;
-    font-size: 28px;
-    text-align: center;
-    height: 360px;
-    margin-top: 0px;
-    background: #C5C5C5;
-    border: 0;
-}
-
-#boxes .box1{
-    float: left;
-    width: 30%;
-    padding: 10px;
-    font-size: 28px;
-    text-align: center;
-    height: 360px;
-    margin-top: 0px;
-    background: #B1B1B1;
-    border: 0;
-}
-
-#boxes .box:hover{
-    font-size: bold;
+    width: 100%;
 }
 
 

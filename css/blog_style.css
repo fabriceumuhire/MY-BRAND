@@ -8,7 +8,6 @@ body {
     position: relative;
     padding-bottom: 124px;
     min-height: 100vh;
-    background-image: url('./img/review6.jpg');
 }
 
 .container {
@@ -76,12 +75,9 @@ header nav img {
      font-weight: bold;
  }
 
-#image {
-    background-image: url('./img/review6.jpg');
-  }
-
  #boxes{
      margin-top: 20px;
+     display: flex;
  }
 
  #boxes .box2{
@@ -123,10 +119,92 @@ header nav img {
     font-size: bold;
 }
 
+article #main-col{
+    float: right;
+    width: 50%;
+    margin-top: 10px;
+    margin-left: 80%;
+    position: relative;
+    font-size: large;
+    font-weight: bolder;
+}
+
+.cards {
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 10px;
+    max-width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+    grid-auto-rows: auto;
+    gap: 40px;
+    font-family: sans-serif;
+    padding-top: 30px;
+}
+
+.cards * {
+    box-sizing: border-box;
+}
+
+.card__image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    border-top: 2px solid #739FE1;
+    border-right: 2px solid #739FE1;
+    border-left: 2px solid #739FE1;
+}
+
+.card__content {
+    line-height: 1.5;
+    font: 15px/1.5 Georgia, 'Times New Roman', Times, serif;
+    padding: 15px;
+    background: #fafafa;
+    border-right: 2px solid #739FE1;
+    border-left: 2px solid #739FE1;
+}
+
+.card__content > p:first-of-type {
+    margin-top: 0;
+}
+
+.card__content > p:last-of-type {
+    margin-bottom: 0;
+}
+
+.card__info {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #555555;
+    background: #eeeeee;
+    font-size: 0.8em;
+    border-bottom: 2px solid #739FE1;
+    border-right: 2px solid #739FE1;
+    border-left: 2px solid #739FE1;
+}
+
+.card__info i {
+    font-size: 0.9em;
+    margin-right: 8px;
+}
+
+.card__link {
+    color: #000000;
+    font: 14px/1.5 Georgia, 'Times New Roman', Times, serif;
+    text-decoration: none;
+}
+
+.card__link:hover {
+    text-decoration: underline;
+}
 
 
 footer {
     padding: 0;
+    display: flex;
     margin-top: 5px;
     background: #739FE1;
     text-align: left;
