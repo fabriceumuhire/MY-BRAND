@@ -147,3 +147,9 @@ footer li {
     display: inline;
     padding: 0 10px 0 10px;
 }
+
+@media(max-width: 768px) {
+    body{
+        display: none;
+    }
+}

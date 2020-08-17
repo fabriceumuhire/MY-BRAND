@@ -10,7 +10,7 @@ body {
 }
 
 .container {
-    width: 100%;
+    width: 95%;
     margin: 50px;
     overflow: hidden;
 }
@@ -72,10 +72,19 @@ header nav img {
      font-weight: bold;
  }
 
+aside#sidebar {
+    float: right;
+    width: 40%;
+    margin-top: 40px;
+    margin-right: 40px;
+    font-size: small;
+    font-weight: bolder;
+}
 
 article#main-col{
     float: left;
-    width: 100%;
+    width: 70%;
+    font-size: large;
 }
 
 
@@ -101,4 +110,10 @@ footer li {
     float: left;
     display: inline;
     padding: 0 10px 0 10px;
+}
+
+@media(max-width: 768px) {
+    body{
+        display: none;
+    }
 }

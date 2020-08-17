@@ -74,16 +74,17 @@ header nav img {
 
 aside#sidebar {
     float: right;
-    width: 30%;
-    margin-top: 50px;
+    width: 40%;
+    margin-top: 40px;
     margin-right: 40px;
-    font-size: xx-large;
+    font-size: large;
     font-weight: bolder;
 }
 
 article#main-col{
     float: left;
-    width: 60%;
+    width: 50%;
+    font-size: larger;
 }
 
 
@@ -109,4 +110,10 @@ footer li {
     float: left;
     display: inline;
     padding: 0 10px 0 10px;
+}
+
+@media(max-width: 768px) {
+    body{
+        display: none;
+    }
 }

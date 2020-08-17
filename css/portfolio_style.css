@@ -75,50 +75,6 @@ header nav img {
      font-weight: bold;
  }
 
- #boxes{
-     margin-top: 20px;
-     display: flex;
- }
-
- #boxes .box2{
-     float: left;
-     width: 30%;
-     padding: 10px;
-     font-size: 28px;
-     text-align: center;
-     background: #929292;
-     height: 360px;
-     margin-top: 0px;
- }
-
- #boxes .box{
-    float: left;
-    width: 30%;
-    padding: 10px;
-    font-size: 28px;
-    text-align: center;
-    height: 360px;
-    margin-top: 0px;
-    background: #C5C5C5;
-    border: 0;
-}
-
-#boxes .box1{
-    float: left;
-    width: 30%;
-    padding: 10px;
-    font-size: 28px;
-    text-align: center;
-    height: 360px;
-    margin-top: 0px;
-    background: #B1B1B1;
-    border: 0;
-}
-
-#boxes .box:hover{
-    font-size: bold;
-}
-
 article #main-col{
     float: right;
     width: 50%;
@@ -225,4 +181,10 @@ footer li {
     float: left;
     display: inline;
     padding: 0 10px 0 10px;
+}
+
+@media(max-width: 768px) {
+    body{
+        display: none;
+    }
 }
