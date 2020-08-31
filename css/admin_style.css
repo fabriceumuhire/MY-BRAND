@@ -56,71 +56,81 @@ nav a {
 nav a:hover{
     color: teal;
     font-weight: bold;
-}   
-
-
-
-#main{
-    margin-top: 80px;
-    width: 60%;
-}
+} 
 
 .darkgray{
-    padding: 10px;
-    height: 70%;
-    width: 30%;
-    margin-left: 40px;
+    padding: 15px;
+    height: auto;
+    width: auto;
+    margin-left: 20px;
     margin-top: 0px;
     background: #7e7979;
+    border: 0;
     border: 5px solid #739FE1;
     border-radius: 10px;
 }
 
-section #main-col{
+.main{
+     margin-top: 20px;
+     width: 30%;
+     height: 50%;
+ }
+
+section .box{
      float: left;
-     width: 80%;
-     height: 100%;
+     width: 20%;
+     margin-left: 20px;
      border: #F4F4F4;
      padding: 10px;
      font-size: 16px;
      text-align: left;
  }
 
- aside#sidebar .page-title {
-     margin-bottom: 40px;
-     margin-left: 40px;
+ .main-col aside #sidebar .page-title {
+     margin-bottom: 20px;
+     
  }
+
   
- Clear floats after the columns 
+  .require {
+    float: left;
+    width: auto;
+    margin-top: 4px;
+  }
+  
+  /* Clear floats after the columns */
   .quote:after {
     content: "";
     display: table;
     clear: both;
   }
   
-  input[type=text] {
-    width: 500px;
-    padding: 12px;
-    padding-top: 50px;
+  input[type=email], select, textarea {
+    width: 250px;
+    padding: 5px;
+    padding-right: auto;
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
-    padding: 12px 12px 12px 0;
-  }
-  
-  label {
-    
-    display: inline-block;
   }
 
-  button .submit {
+  input[type=password], select, textarea {
+    width: 250px;
+    padding: 5px;
+    padding-right: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+
+  button {
     background-color: #739FE1;
     color: white;
-    padding: 12px 20px;
+    padding: 12px 15px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    float: right;
+    float: left;
   }
 
 
