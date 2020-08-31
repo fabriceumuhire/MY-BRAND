@@ -6,6 +6,11 @@
         <meta name="author" content="Fabrice Umuhire">
         <title> Tech U | Admin</title>
         <link rel="stylesheet" href="./css/admin_style.css">
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
         <meta>
     </head>
     <body>
@@ -25,8 +30,58 @@
                 </nav>
             </div>
         </header>
-
+        <section class="main">
+                <aside id="sidebar">
+                    <h1 class="page-title">Enter your username& Password</h1>
+                </aside>
+                <article class="main-col" id="login_div">
+                    <div class="darkgray">
+                        <form id="login_div" class="quote">
+                            <div>
+                                <input type="email" placeholder="Email/Username" id="email">
+                            </div><br>
+                            <div>
+                                <input type="password" placeholder="Password" id="password">
+                            </div><br>
+                            <div class="button_1">
+                                <button onclick="login()">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </article>
+        </section>
+    <script src="./admin.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyBIRRiFPxqQ1dRhjIAg0gzzQo7PfYCuSo8",
+          authDomain: "tech-u-blog.firebaseapp.com",
+          databaseURL: "https://tech-u-blog.firebaseio.com",
+          projectId: "tech-u-blog",
+          storageBucket: "tech-u-blog.appspot.com",
+          messagingSenderId: "1029044573579",
+          appId: "1:1029044573579:web:cfa5c2820cedb2dbb94b8e",
+          measurementId: "G-FGBVGDH3YL"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+      </script>
     </body>
+    <footer>
+        <div class="container">
+            <ul>
+                <li><a href="./home.html">Home</a></li>
+                <li><a href="./portfolio.html">Portfolio</a></li>
+                <li><a href="./blogs.html">Blogs</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./contact_us.html">Contact</a></li>
+                <li><a href="./policies.html">Policy</a></li>
+            </ul>
+            
+        </div>
+
+    </footer>
 
 
 </html>
