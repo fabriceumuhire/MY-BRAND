@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width-device-width">
+        <meta name="author" content="Fabrice Umuhire">
+        <title> Tech U | Admin</title>
+        <link rel="stylesheet" href="./css/admin_style.css">
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+        <meta>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <img src="./img/Logo1.png" alt="logo" class="logo"/>
+            
+                <nav>
+                    <ul>     
+                        <li><a href="./portfolio.html">Portfolio</a></li>
+                        <li><a href="./blogs.html">Blogs</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a href="./contact_us.html">Get in touch</a></li>
+                        <li><a href="./signup.html">Sign Up</a></li>
+                        <li><a href="./admin.html"><img src="./img/img_avatar.png" alt="avatar" class="avatar"/></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section class="main">
+                <aside id="sidebar">
+                    <h1 class="page-title" style="margin-left: 20px;">User Login</h1>
+                </aside>
+                <article>
+                    <div class="darkgray">
+                        <form id="login">
+                            <div class="quote">
+                                <div class="require">
+                                    <input type="email" name="email" id="email" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="quote">
+                                <div class="require">
+                                    <input type="password" name="password" id="password" placeholder="Password">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="quote">
+                                <button onclick="login()">Login</button>
+                            </div>
+                                
+                        </form>
+                    </div>
+                </article>
+        </section>
+    <script src="./admin.js"></script>
+    
+    </body>
+    <footer>
+        <div class="container">
+            <ul>
+                <li><a href="./home.html">Home</a></li>
+                <li><a href="./portfolio.html">Portfolio</a></li>
+                <li><a href="./blogs.html">Blogs</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./contact_us.html">Contact</a></li>
+                <li><a href="./policies.html">Policy</a></li>
+            </ul>
+            
+        </div>
+
+    </footer>
+
+
+</html>
