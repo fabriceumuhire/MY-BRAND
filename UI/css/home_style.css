@@ -61,7 +61,7 @@ nav a:hover{
  #boxes{
      margin-top: 30px;
      display: flex;
-     height: 70%;
+     height: 100%;
      width: 100%;
  }
 
@@ -80,9 +80,11 @@ nav a:hover{
     padding: 10px;
     font-size: 24px;
     text-align: left;
+    text-justify: auto;
     height: 100%;
     background: #C5C5C5;
     margin-left: 20px;
+    margin-right: 20px;
 }
 
 #boxes .box1{
@@ -90,8 +92,10 @@ nav a:hover{
     padding: 10px;
     font-size: 24px;
     text-align: left;
+    text-justify: auto;
     height: 100%;
-    background-color: #B1B1B1;
+    background-color: #ada6a6;
+    margin-right: 20px;
 }
 
 footer {
@@ -199,7 +203,7 @@ footer a {
     }
 }
 
-@media screen and (min-width: 100px)  and (max-width: 820px) {
+@media only screen and (max-width: 768px) {
     
     .container{
         width: 80%;
@@ -234,36 +238,28 @@ footer a {
     }
     #boxes{
         display: table-row;
-        height: 80%;
-        width: 90%;
     }
 
     #boxes .box2 {
-        width: 80%;
-        margin-top: 2%;
+        width: 70%;
         margin-left: 4%;
-        font-size: 16px;
+        font-size: 14px;
         text-align: left;
-        background: #c4c3c3;
-        height: auto;
     }
 
     #boxes .box {
-        width: 80%;
-        margin-top: 2%;
+        width: 70%;
         margin-left: 4%;
-        font-size: 16px;
+        font-size: 14px;
         text-align: left;
-        height: auto;
     }
 
     #boxes .box1{
-        width: 80%;
+        width: 70%;
         margin-top: 2%;
         margin-left: 4%;
-        font-size: 16px;
+        font-size: 14px;
         text-align: left;
-        height: auto;
     }
 
     footer {
@@ -313,36 +309,30 @@ footer a {
     }
     #boxes{
         display: table-row;
-        height: auto;
-        width: auto;
     }
 
     #boxes .box2 {
-        width: 50px;
+        width: 500px;
         margin-top: 2%;
         margin-left: 4%;
         font-size: 16px;
         text-align: left;
-        background: #c4c3c3;
-        height: auto;
     }
 
     #boxes .box {
-        width: 50px;
+        width: 500px;
         margin-top: 2%;
         margin-left: 4%;
         font-size: 16px;
         text-align: left;
-        height: auto;
     }
 
     #boxes .box1{
-        width: 50px;
+        width: 500px;
         margin-top: 2%;
         margin-left: 4%;
         font-size: 16px;
         text-align: left;
-        height: auto;
     }
 
     footer {
