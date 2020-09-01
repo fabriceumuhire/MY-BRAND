@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width-device-width">
         <meta name="author" content="Fabrice Umuhire">
-        <title> Tech U | Admin</title>
-        <link rel="stylesheet" href="./css/admin_style.css">
+        <title> Tech U | Create</title>
+        <link rel="stylesheet" href="./css/create_style.css">
         <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
 
@@ -31,33 +31,30 @@
                 </nav>
             </div>
         </header>
-        <section class="main">
-                <aside id="sidebar">
-                    <h1 class="page-title" style="margin-left: 20px;">User Login</h1>
-                </aside>
-                <article>
-                    <div class="darkgray">
-                        <form action="./admin_board.html" method="GET" id="login">
-                            <div class="quote">
-                                <div class="require">
-                                    <input type="email" name="email" id="email" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="quote">
-                                <div class="require">
-                                    <input type="password" name="password" id="password" placeholder="Password">
-                                </div>
-                            </div>
-                            <br>
-                            <div class="quote">
-                                <button onclick="login()">Login</button>
-                            </div>
-                                
-                        </form>
-                    </div>
-                </article>
+        <section>
+            <div class="admin-content">
+                <div class="content">
+                    <h2 class="page-title">Create a Blog</h2>
+
+                    <form action="create.html" method="post">
+                        <div>
+                            <input type="text" name="title" class="text-input" placeholder="Blog Title">
+                        </div><br>
+                        <div class="text-input">
+                            <textarea name="body" id="body" placeholder="Blog Body"></textarea>
+                        </div>
+                        <div>
+                            <input type="file" id="myFile" name="filename">
+                        </div>
+                        <div class="quote">
+                            <button type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </section>
-    <script src="./admin.js"></script>
+        <script src="https://cdn.ckeditor.com/ckeditor5/21.0.0/classic/ckeditor.js"></script>
+        <script src="./script.js"></script>
     
     </body>
     <footer>

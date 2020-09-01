@@ -5,13 +5,109 @@
         <meta name="viewport" content="width-device-width">
         <meta name="author" content="Fabrice Umuhire">
         <title> Tech U | Admin</title>
-        <link rel="stylesheet" href="./css/board_style.css">
+        <link rel="stylesheet" href="./css/adm_board_style.css">
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
         <meta>
     </head>
     <body>
-
-    </body>
+        <header>
+            <div class="container">
+                <img src="./img/Logo1.png" alt="logo" class="logo"/>
             
+                <nav>
+                    <ul>     
+                        <li><a href="./portfolio.html">Portfolio</a></li>
+                        <li><a href="./blogs.html">Blogs</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a href="./contact_us.html">Get in touch</a></li>
+                        <li><a href="./signup.html">Sign Up</a></li>
+                        <li><a href="./admin.html"><img src="./img/img_avatar.png" alt="avatar" class="avatar"/></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section>
+            <div class="admin-content">
+                <div class="button">
+                    <a href="create.html" class="quote">Add Blog</a>
+                </div>
+                <div class="button">
+                    <a href="view_blog.html" class="quote">Manage Blog</a>
+                </div>
+
+                <div class="content">
+
+                    <h2 class="page-title">Manage Blogs</h2>
+
+                    <table>
+                        <thead>
+                            <th>N°</th>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th colspan="3">Action</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>My first blog</td>
+                                <td>Admin</td>
+                                <td><a href="#" class="update">Update</a></td>
+                                <td><a href="#" class="delete">Delete</a></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>2</td>
+                                <td>My second blog</td>
+                                <td>Admin</td>
+                                <td><a href="#" class="update">Update</a></td>
+                                <td><a href="#" class="delete">Delete</a></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>3</td>
+                                <td>My third blog</td>
+                                <td>Admin</td>
+                                <td><a href="#" class="update">Update</a></td>
+                                <td><a href="#" class="delete">Delete</a></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>4</td>
+                                <td>My forth blog</td>
+                                <td>Admin</td>
+                                <td><a href="#" class="update">Update</a></td>
+                                <td><a href="#" class="delete">Delete</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </section>
+    
+    </body>
+    <footer>
+        <div class="container">
+            <ul>
+                <li><a href="./home.html">Home</a></li>
+                <li><a href="./portfolio.html">Portfolio</a></li>
+                <li><a href="./blogs.html">Blogs</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./contact_us.html">Contact</a></li>
+                <li><a href="./policies.html">Policy</a></li>
+            </ul>
+            
+        </div>
+
+    </footer>
 
 
 </html>
