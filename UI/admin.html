@@ -11,7 +11,7 @@
 
         <!-- TODO: Add SDKs for Firebase products that you want to use
             https://firebase.google.com/docs/web/setup#available-libraries -->
-        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
         <meta>
     </head>
     <body>
@@ -37,15 +37,15 @@
                 </aside>
                 <article>
                     <div class="darkgray">
-                        <form action="./admin_board.html" method="GET" id="login">
+                        <form id="login">
                             <div class="quote">
                                 <div class="require">
-                                    <input type="email" name="email" id="email" placeholder="Email">
+                                    <input type="email" name="email" id="email" placeholder="Email" required />
                                 </div>
                             </div>
                             <div class="quote">
                                 <div class="require">
-                                    <input type="password" name="password" id="password" placeholder="Password">
+                                    <input type="password" name="password" id="password" placeholder="Password" required />
                                 </div>
                             </div>
                             <br>
@@ -57,7 +57,7 @@
                     </div>
                 </article>
         </section>
-    <script src="./admin.js"></script>
+        <script src="./admin.js"></script>
     
     </body>
     <footer>
@@ -70,10 +70,6 @@
                 <li><a href="./contact_us.html">Contact</a></li>
                 <li><a href="./policies.html">Policy</a></li>
             </ul>
-            
         </div>
-
     </footer>
-
-
 </html>
