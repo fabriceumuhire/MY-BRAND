@@ -7,7 +7,8 @@
         <title> Tech U | Create</title>
         <link rel="stylesheet" href="./css/create_style.css">
         <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
 
         <!-- TODO: Add SDKs for Firebase products that you want to use
             https://firebase.google.com/docs/web/setup#available-libraries -->
@@ -22,7 +23,7 @@
                 <nav>
                     <ul>     
                         <li><a href="./portfolio.html">Portfolio</a></li>
-                        <li><a href="./blogs.html">Blogs</a></li>
+                        <li><a href="./view_blog.html">Blogs</a></li>
                         <li><a href="./about.html">About</a></li>
                         <li><a href="./contact_us.html">Get in touch</a></li>
                         <li><a href="./signup.html">Sign Up</a></li>
@@ -36,9 +37,9 @@
                 <div class="content">
                     <h2 class="page-title">Create a Blog</h2>
 
-                    <form action="create.html" method="post">
+                    <form id="add_enquiry">
                         <div>
-                            <input type="text" name="title" class="text-input" placeholder="Blog Title">
+                            <input type="text" name="title" id="title" placeholder="Blog Title">
                         </div><br>
                         <div class="text-input">
                             <textarea name="body" id="body" placeholder="Blog Body"></textarea>
@@ -53,6 +54,23 @@
                 </div>
             </div>
         </section>
+        
+        <script>
+            var firebaseConfig = {
+                apiKey: "AIzaSyBIRRiFPxqQ1dRhjIAg0gzzQo7PfYCuSo8",
+                authDomain: "tech-u-blog.firebaseapp.com",
+                databaseURL: "https://tech-u-blog.firebaseio.com",
+                projectId: "tech-u-blog",
+                storageBucket: "tech-u-blog.appspot.com",
+                messagingSenderId: "1029044573579",
+                appId: "1:1029044573579:web:cfa5c2820cedb2dbb94b8e",
+                measurementId: "G-FGBVGDH3YL"
+            };
+
+            firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+            db.settings({ timestampsInSnapshots: true});
+        </script>
         <script src="https://cdn.ckeditor.com/ckeditor5/21.0.0/classic/ckeditor.js"></script>
         <script src="./script.js"></script>
         <script src="./app.js"></script>

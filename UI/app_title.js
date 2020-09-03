@@ -1,4 +1,4 @@
-const enquiry = document.querySelector('#enquiry_list');
+const enquiry = document.querySelector('#enquiry_title');
 const form = document.querySelector('#add_enquiry');
 
 function renderEnquiry(doc) {
@@ -12,8 +12,7 @@ function renderEnquiry(doc) {
     body.textContent =doc.data().body;
     myFile.textContent =doc.data().myFile;
 
-    li.appendChild(myFile);
-    li.appendChild(body);
+    li.appendChild(title);
     
 
     enquiry.appendChild(li);

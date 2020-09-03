@@ -11,6 +11,10 @@ header {
     background: #739FE1;
 }
 
+ul {
+    list-style: none;
+}
+
 header::after {
     content: '';
     display: table;
@@ -58,116 +62,101 @@ nav a:hover{
     font-weight: bold;
 } 
 
-.darkgray{
-    padding: 15px;
-    height: auto;
-    width: auto;
-    margin-left: 20px;
-    margin-top: 0px;
-    background: #7e7979;
-    border: 0;
-    border: 5px solid #739FE1;
+
+.cards {
     border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 2px;
+    max-width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+    grid-auto-rows: auto;
+    gap: 40px;
+    font-family: sans-serif;
+    padding-top: 30px;
 }
 
-.main{
-     margin-top: 20px;
-     width: 30%;
-     height: 50%;
- }
+.card * {
+    box-sizing: border-box;
+}
 
-section .box{
-     float: left;
-     width: 20%;
-     margin-left: 20px;
-     border: #F4F4F4;
-     padding: 10px;
-     font-size: 16px;
-     text-align: left;
- }
+.card__image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    border-top: 2px solid #739FE1;
+    border-right: 2px solid #739FE1;
+    border-left: 2px solid #739FE1;
+}
 
- .main-col aside #sidebar .page-title {
-     margin-bottom: 20px;
-     
- }
+.card__content {
+    line-height: 1.5;
+    font: 15px/1.5 Georgia, 'Times New Roman', Times, serif;
+    padding: 15px;
+    background: #fafafa;
+    border-right: 2px solid #739FE1;
+    border-left: 2px solid #739FE1;
+}
 
-  
-  .darkgray .require {
-    float: left;
-    width: auto;
-    margin-top: 4px;
-  }
-  
-  /* Clear floats after the columns */
-  .quote:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  input[type=email]{
-    width: auto;
-    padding: 5px;
-    padding-right: auto;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: vertical;
-  }
+.card__content > p:first-of-type {
+    margin-top: 0;
+}
 
-  input[type=password]{
-    width: auto;
-    padding: 5px;
-    padding-right: auto;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: vertical;
-  }
+.card__content > p:last-of-type {
+    margin-bottom: 0;
+}
 
-  button {
-    background-color: #739FE1;
-    color: white;
-    padding: 12px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    float: left;
-  }
+.card__info {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #555555;
+    background: #eeeeee;
+    font-size: 0.8em;
+    border-bottom: 2px solid #739FE1;
+    border-right: 2px solid #739FE1;
+    border-left: 2px solid #739FE1;
+}
 
-  .login_form #email_error,
-  .login_form #pass_error {
-      margin-top: 5px;
-      width: 300px;
-      font-size: 12px;
-      color: tomato;
-      display: none;
-  }
+.card__info i {
+    font-size: 0.9em;
+    margin-right: 8px;
+}
 
-  footer {
+.card__link {
+    color: #000000;
+    font: 14px/1.5 Georgia, 'Times New Roman', Times, serif;
+    text-decoration: none;
+}
 
+.card__link:hover {
+    text-decoration: underline;
+}
+
+
+
+footer {
     padding: 1px;
     margin-top: 18%;
     background: #739FE1;
     text-align: left;
     width: 100%;
     float: left;
-    height: 5%;
-}
-
-footer li {
-    float: left;
-    display: inline;
-    margin-left: 0px;
-    padding: 0 10px 0 10px;
+    height: 1%;
 }
 
 footer a {
     color: #000000;
     text-decoration: none;
-    font-size: 12px;
-
+    font-size: 16px;
 }
-
-/*
+footer li {
+    float: left;
+    display: inline-block;
+    padding: 0 10px 0 10px;
+}
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     
@@ -214,7 +203,7 @@ footer a {
         margin-top: 6px;
       }
       
-      /* Clear floats after the columns 
+      /* Clear floats after the columns */
       .quote:after {
         content: "";
         display: table;
@@ -261,7 +250,7 @@ footer a {
         padding-left: 5px;
         padding-right: 0px;
         height: 15%;
-        /*margin-right: auto;
+        /*margin-right: auto;*/
     }
     header nav a {
         font-size: 12px;
@@ -293,7 +282,7 @@ footer a {
         margin-top: 6px;
       }
       
-      /* Clear floats after the columns 
+      /* Clear floats after the columns */
       .quote:after {
         content: "";
         display: table;

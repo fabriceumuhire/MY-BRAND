@@ -12,8 +12,8 @@ function renderEnquiry(doc) {
     body.textContent =doc.data().body;
     myFile.textContent =doc.data().myFile;
 
+
     li.appendChild(myFile);
-    li.appendChild(body);
     
 
     enquiry.appendChild(li);

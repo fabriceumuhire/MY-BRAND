@@ -10,17 +10,20 @@ var firebaseConfig = {
     measurementId: "G-FGBVGDH3YL"
 };
 // Initialize Firebase
+
+
 firebase.initializeApp(firebaseConfig);
 
-const email = document.getElementById("email");
-const password = document.getElementById("password");
-const login = document.getElementById("login");
+function login(){
+    var userEmail = document.getElementById("email").value;
+    var userPass = document.getElementById("password").value;
+    
+    firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
 
-login.addEventListener('click', e => {
-    const email = email.value;
-    const pass = password.value;
-    const auth = firebase.auth();
-
-    const promise = auth.signInWithEmailAndPassword(email, pass);
-    promise.catch(e => console.log(message));
-})
+        window.alert("Error : " + errorMessage);
+        // ...
+      });
+}
