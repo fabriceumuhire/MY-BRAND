@@ -30,42 +30,8 @@
             <div class="box">
                 <aside id="main-col">
                     <h1 class="page-title">Get in touch with us!</h1>
-                    <!--<ul id="enquiry_list"></ul><br> ----Display the queries -->
+                    <ul id="enquiry_list"></ul>
                 </aside>
-                
-                <article>
-                    <div id="darkgray">
-                        <form id="add_enquiry">
-                            <div class="quote">
-                                <div class="require">
-                                    <input type="text" name="name" id="name" placeholder="Your Full Names">
-                                </div>
-                            </div>
-
-                                <div class="quote">
-                                    <div class="require">
-                                        <input type="email" name="email" id="email" placeholder="Your Email" required>
-                                    </div>
-                                </div>
-                                <div class="quote">
-                                    <div class="require">
-                                        <input type="text" name="subject" id="subject" placeholder="Your Enquire">
-                                    </div>
-                                </div>
-                                <div class="quote">
-                                    <div class="require">
-                                        <textarea type="text" name="message" id="message" placeholder="Message..." style="height:100px" required></textarea>
-                                    </div>
-                                </div><br>
-                                <div class="quote">
-                                    <button id="submit">Submit</button>
-                                </div>
-                                <!-- <div class="quote">
-                                    <input type="submit" value="Submit">
-                                </div> -->
-                        </form>
-                    </div>
-                </article>
             </div>
         </section>
         <script>
@@ -85,7 +51,7 @@
             const db = firebase.firestore();
             db.settings({ timestampSInSnapshots: true});
             </script>
-            <script src="./app.js"></script>
+        <script src="./app.js"></script>
 
     </body>
     <footer>
@@ -99,8 +65,5 @@
                 <li><a href="./policies.html">Policy</a></li>
             </ul>
         </div>
-
     </footer>
-
-
 </html>

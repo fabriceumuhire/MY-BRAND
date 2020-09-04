@@ -14,7 +14,7 @@ function renderEnquiry(doc) {
     subject.textContent =doc.data().subject;
     message.textContent =doc.data().message;
 
-    li.appendChild(name);
+    li.appendChild(email);
     li.appendChild(message);
     
 
