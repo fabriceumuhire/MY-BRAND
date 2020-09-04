@@ -37,26 +37,24 @@
                 </aside>
                 <article>
                     <div class="darkgray">
-                        <form action="./admin_board.html" method="POST" id="login">
-                            <div class="quote">
-                                <div class="require">
-                                    <input type="email" name="email" id="email" placeholder="Email" required />
-                                </div>
+                        <div class="quote">
+                            <div class="require">
+                                <input type="email" placeholder="Email" id="email" required />
                             </div>
-                            <div class="quote">
-                                <div class="require">
-                                    <input type="password" name="password" id="password" placeholder="Password" required />
-                                </div>
+                        </div>
+                        <div class="quote">
+                            <div class="require">
+                                <input type="password" placeholder="Password" id="password" required/>
                             </div>
-                            <br>
-                            <div class="quote">
-                                <button onclick="login()">Login</button>
-                            </div>
-                        </form>
+                        </div>
+                        <br>
+                        <div class="quote">
+                            <button onclick="signIn()" id="signIn">Sign In </button>
+                        </div>
                     </div>
                 </article>
         </section>
-        <script src="./admin.js"></script>
+        <script src="./auth.js"></script>
     </body>
     <footer>
         <div class="container">
