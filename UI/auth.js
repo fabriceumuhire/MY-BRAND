@@ -18,8 +18,7 @@ function signIn(){
     var password = document.getElementById("password");
     const promise = auth.signInWithEmailAndPassword(email.value,password.value);
     promise.then(function(user) {
-        window.location = "./admin_board.html";
+        window.location = "./view_blog.html";
     })
     promise.catch(e => alert(e.message));
-    alert("Signed In :" + email.value);    
 }

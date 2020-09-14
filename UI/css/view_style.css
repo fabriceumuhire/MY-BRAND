@@ -13,6 +13,11 @@ header {
 
 ul {
     list-style: none;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
 }
 
 header::after {
@@ -62,10 +67,30 @@ nav a:hover{
     font-weight: bold;
 } 
 
+.button {
+    background-color: #739FE1;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 8px 10px;
+    margin-left: 5px;
+    margin-top: 40px;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+    list-style: none;
+}
+
+  .quote:after {
+    content: "";
+    display: table-column;
+    clear: both;
+    text-decoration: none;
+    list-style: none;
+  }
+
 
 .cards {
     border-radius: 10px;
-    margin: 0 auto;
     margin-top: 2px;
     max-width: 90%;
     display: grid;
@@ -73,7 +98,8 @@ nav a:hover{
     grid-auto-rows: auto;
     gap: 40px;
     font-family: sans-serif;
-    padding-top: 30px;
+    padding-top: 20px;
+    padding-left: 20px;
 }
 
 .card * {

@@ -1,4 +1,5 @@
-const enquiry = document.querySelector('#enquiry_list');
+const enquiry = document.querySelector('.cards');
+const frame = document.querySelector('#enquiry_frame');
 const form = document.querySelector('#add_enquiry');
 
 function renderEnquiry(doc) {
@@ -12,17 +13,17 @@ function renderEnquiry(doc) {
     body.textContent =doc.data().body;
     myFile.textContent =doc.data().myFile;
 
-    li.appendChild(myFile);
-    li.appendChild(body);
-    
+    li.appendChild(title);
 
     enquiry.appendChild(li);
 }
 
-db.collection('blogs').get().then((snapshot) => {
-    snapshot.docs.forEach(doc => {
-        renderEnquiry(doc); 
-    });
+db.collection('blogs').get().then((Snapshot) => {
+    Snapshot.forEach((doc) => {
+        var data = doc.data();
+        var id = doc.id;
+        document.getElementsByClassName("card__content")[0].innerHTML += title;
+        });
 });
 
 //Saving data
