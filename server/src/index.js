@@ -8,7 +8,7 @@ mongoose
   .then(() => {
     const app = express();
     app.use(express.json());
-    app.use("/api", queries);
+    app.use("/api/routes", queries);
 
     app.listen(5000, () => {
       console.log("Server has started!");

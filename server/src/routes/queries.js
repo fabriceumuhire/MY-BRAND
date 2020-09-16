@@ -2,12 +2,12 @@ const express = require("express");
 const Post = require("../models/Post");
 const router = express.Router();
 
-router.get("/routes/queries", async (req, res) => {
+router.get("/queries", async (req, res) => {
   const queries = await Post.find();
   res.send(queries);
 });
 
-router.post("/routes/queries", async (req, res) => {
+router.post("/queries", async (req, res) => {
   const post = new Post({
     name: req.body.name,
     email: req.body.email,
@@ -19,7 +19,7 @@ router.post("/routes/queries", async (req, res) => {
   console.log(req.body);
 });
 
-router.get("/routes/queries/:id", async (req, res) => {
+router.get("/queries/:id", async (req, res) => {
   try {
     const post = await Post.findOne({ _id: req.params.id });
     res.send(post);
