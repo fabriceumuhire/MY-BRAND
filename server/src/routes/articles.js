@@ -87,11 +87,13 @@ router.delete("/articles/:id/:publicId", async (req, res) => {
           _id: req.params.id,
           publicId: result.public_id,
         });        
-      }); 
-    res.status(204).send("Deleted successfully");
+      });
+    res.send({Message: "Article deleted successfully"});
+    res.status(204);
     } catch (error) {
     res.status(404);
-    res.send({ error: "Article doesn't exist!" });    
+    res.send({ error: "Article doesn't exist!" });
+        
     }
 });
 
