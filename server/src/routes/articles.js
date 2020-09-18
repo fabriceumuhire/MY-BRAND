@@ -83,15 +83,12 @@ router.patch("/articles/:id", async (req, res) => {
 router.delete("/articles/:id/:publicId", async (req, res) => {
     try {
       cloudinary.v2.uploader.destroy(req.params.publicId, async (error,result) => {
-        console.log(error);
         await Blog.findByIdAndRemove({
           _id: req.params.id,
           publicId: result.public_id,
-        });
-        res.status(200).send();      
-      });
-      
-    
+        });        
+      }); 
+    res.status(204).send("Deleted successfully");
     } catch (error) {
     res.status(404);
     res.send({ error: "Article doesn't exist!" });    
