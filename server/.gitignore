@@ -1,0 +1,6 @@
+# Ignore tmp files
+src/tmp/*
+# Ignore node modules
+node_modules/*
+# Ignore .env file
+src/utils/.env
