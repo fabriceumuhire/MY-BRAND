@@ -3,6 +3,9 @@ const Blog = require("../models/Blog");
 require('dotenv').config();
 require("../utils/cloudinary");
 const cloudinary = require('cloudinary');
+const { articleValidation } = require("../validators/articles");
+const Joi = require("@hapi/joi");
+const jwtverify = require("./verify");
 
 const router = express.Router();
 
@@ -12,7 +15,11 @@ router.get("/articles", async (req, res) => {
 });
 
 
-router.post("/articles", async (req, res) => {
+router.post("/articles", jwtverify, async (req, res) => {
+  const { error } = articleValidation(req.body);
+    if (error) {
+        res.status(400).send(error.details[0].message);
+    }
   try {
     cloudinary.v2.uploader.upload(req.files.image.tempFilePath,(error,result) => {
       const articles = new Blog({
@@ -23,9 +30,8 @@ router.post("/articles", async (req, res) => {
       });
       articles.save();
       res.send(articles);
-      
     });
-    
+      
   } catch (error) {
     console.log("This is the error", error);
     
@@ -33,7 +39,7 @@ router.post("/articles", async (req, res) => {
 });
 
 
-router.get("/articles/:id", async (req, res) => {
+router.get("/articles/:id", jwtverify, async (req, res) => {
   try {
     const articles = await Blog.findOne({ _id: req.params.id });
     res.send(articles);
@@ -43,7 +49,11 @@ router.get("/articles/:id", async (req, res) => {
   }
 });
 
-router.patch("/articles/:id", async (req, res) => {
+router.patch("/articles/:id", jwtverify, async (req, res) => {
+  const { error } = articleValidation(req.body);
+    if (error) {
+        res.status(400).send(error.details[0].message);
+    }
   try {
     cloudinary.v2.uploader.upload(req.files.image.tempFilePath, async (error,result) => {
       await Blog.findOneAndUpdate({
@@ -80,7 +90,7 @@ router.patch("/articles/:id", async (req, res) => {
   }
 });
 
-router.delete("/articles/:id/:publicId", async (req, res) => {
+router.delete("/articles/:id/:publicId",jwtverify, async (req, res) => {
     try {
       cloudinary.v2.uploader.destroy(req.params.publicId, async (error,result) => {
         await Blog.findByIdAndRemove({
