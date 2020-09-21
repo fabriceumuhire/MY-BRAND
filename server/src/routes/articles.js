@@ -13,6 +13,6 @@ router.get("/articles/:id", articles.getOne);
 
 router.patch("/articles/:id", jwtverify, articles.updateOne);
 
-router.delete("/articles/:id/:publicId",jwtverify, articles.deleteOne);
+router.delete("/articles/:id",jwtverify, articles.deleteOne);
 
 module.exports = router;

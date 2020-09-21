@@ -5,8 +5,6 @@ require("../utils/cloudinary");
 const cloudinary = require('cloudinary');
 const { articleValidation } = require("../validators/articles");
 const Joi = require("@hapi/joi");
-const asynchandler = require("../utils/error");
-
 
 exports.getAll = async (req, res) => {
     const articles = await Blog.find();
@@ -87,17 +85,17 @@ exports.updateOne = async (req, res) => {
 };
 
 exports.deleteOne = async (req, res) => {
-    try {
-        cloudinary.v2.uploader.destroy(req.params.publicId, async (error,result) => {
-            await Blog.findOne({
-            _id: req.params.id,
-            publicId: result.public_id,
-            });        
-        });
+
+    cloudinary.v2.uploader.destroy(req.params.publicId, async (error,result) => {
+        try {
+            await Blog.findOne({ _id: req.params.id });
+            res.status(200);
+        } catch {
+            res.status(404);
+            res.send({error: "Article not found"});
+        }
+        await Blog.deleteOne({ _id: req.params.id });  
         res.status(204);
-        res.send({Message: "Article deleted successfully"});
-    } catch (error) {
-        res.status(404);
-        res.send({ error: "Article doesn't exist!" });
-    }
+        res.send({result: "Article deleted successfully"});      
+    });    
 };
