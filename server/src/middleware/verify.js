@@ -1,4 +1,6 @@
 const jwtoken = require("jsonwebtoken");
+require('dotenv').config({ path: "../utils/"});
+
 
 module.exports = function (req, res, next) {
     const token = req.header("auth-token");
@@ -6,7 +8,7 @@ module.exports = function (req, res, next) {
         res.status(401).send("Not authorization");
     }
     try {
-        const verification = jwtoken.verify(token, "jsjhdqsdjlqhq");
+        const verification = jwtoken.verify(token, process.env.TOKEN_KEY);
         req.user = verification;
         next();
     } catch (error) {
