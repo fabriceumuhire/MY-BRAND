@@ -5,6 +5,12 @@ const bcrypt = require("bcryptjs");
 const webtoken =require("jsonwebtoken");
 
 
+
+exports.getUser = async (req, res) => {
+    const user = await User.find();
+    res.send(user);
+};
+
 exports.registerUser = async (req, res) => {
 
     const { error } = registerValidation(req.body);
@@ -14,26 +20,24 @@ exports.registerUser = async (req, res) => {
 
     const hashed = await bcrypt.genSalt(10);
     const hashPass = await bcrypt.hash(req.body.password, hashed);
-
-    const emailExist = await User.findOne({ email: req.body.email });
-    if (emailExist) {
-        res.status(400).send("Email exists!");
-    }
-
-    else {
-
-    const user = new User({
+    
+    try {
+        const { email } = req.body;
+        const emailExist = await User.findOne({ email: email });
+        if (emailExist) {
+            res.status(400).send({error: "Email exists already"});
+        }
+        const user = new User({
             name: req.body.name,
             email: req.body.email,
             password: hashPass
         });
-        try {
-            const savedUser= await user.save();
-            res.send({ user: user._id, name: user.name, email: user.email});
-        } catch (error) {
-            res.status(404).send(error);
-        }
+        const savedUser= await user.save();
+        res.send({ user: user._id, name: user.name, email: user.email});
+    } catch (error) {
+        res.status(404).send(error);        
     }
+    
 };
 
 exports.loginUser = async (req, res) => {
@@ -51,7 +55,7 @@ exports.loginUser = async (req, res) => {
         res.status(400).send("Wrong password");
     }
 
-    const wtoken = webtoken.sign({_id: user._id},"jsjhdqsdjlqhq" );
+    const wtoken = webtoken.sign({_id: user._id}, process.env.TOKEN_KEY );
     res.header("auth-token", wtoken).send(wtoken);
-    //res.send("Logged In");
 };
+
