@@ -1,21 +1,31 @@
 {
   "name": "learn-express",
   "version": "1.0.0",
-  "main": "./index.js",
+  "main": "./src/index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon index.js"
   },
   "keywords": [],
   "author": "Fabrice Umuhire",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "bcryptjs": "^2.4.3",
     "cloudinary": "^1.23.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-fileupload": "^1.2.0",
+    "express-flash": "0.0.2",
+    "express-session": "^1.17.1",
     "fileupload": "^1.0.0",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.5",
-    "multer": "^1.4.2"
+    "multer": "^1.4.2",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "jest": "^26.4.2"
   }
 }
