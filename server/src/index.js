@@ -3,10 +3,11 @@ const mongoose = require("mongoose");
 const articles = require("./routes/articles");
 const fileupload = require("express-fileupload");
 const authRoute = require("./routes/auth");
+const queries = require("./routes/queries");
 
 
 mongoose
-  .connect("mongodb://localhost:27017/blogdb", { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect("mongodb://localhost:27017/blogdb", { useNewUrlParser: true })
   .then(() => {
     const app = express();
     app.use(express.json());
@@ -16,6 +17,7 @@ mongoose
     }))
     app.use("/api/routes", articles);
     app.use("/api/routes", authRoute);
+    app.use("/api/routes", queries);
 
     app.listen(5000, () => {
       console.log("Server has started!");
