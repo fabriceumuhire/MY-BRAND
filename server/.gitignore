@@ -4,3 +4,5 @@ src/tmp/*
 node_modules/*
 # Ignore .env file
 src/utils/.env
+# Ignore .env file
+.nyc_output/
