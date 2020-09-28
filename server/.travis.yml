@@ -5,7 +5,11 @@ language: node_js
 node_js:
   - "node"
 
+services:
+  - mongodb
+
 script:
   - npm run coverage
+
 notifications:
   email: false
