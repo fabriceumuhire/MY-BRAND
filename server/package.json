@@ -5,8 +5,7 @@
   "scripts": {
     "start": "nodemon index.js",
     "test": "mocha src/test/*",
-    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
-    "coverage": "nyc npm run test && nyc report --reporter=lcov && nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "keywords": [],
   "author": "Fabrice Umuhire",
