@@ -19,6 +19,7 @@ install:
 script:
   - cd server
   - npm install
+  - npm run start
   - npm run test
 
 after_success: 
