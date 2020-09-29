@@ -1,4 +1,4 @@
-const chai = require("chai");
+/* const chai = require("chai");
 const server = require("../index");
 const chaiHttp = require("chai-http");
 chai.use(chaiHttp);
@@ -132,7 +132,7 @@ describe("Register API", () => {
             .send(credentials)
             .end((error,res) => {
                 res.should.have.status(400);
-                /* res.body.should.have.property("error"); */
+                // res.body.should.have.property("error"); 
                 //res.should.be.json;
             done();
             });
@@ -154,4 +154,4 @@ describe("Register API", () => {
             });
         });
     });
-});
+}); */

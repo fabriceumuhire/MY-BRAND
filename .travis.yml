@@ -1,8 +1,6 @@
 language: node_js
 
-os: linux
-
-dist: xenial
+env: MONGO_URL_TEST=mongodb://localhost:27017/blogdb
 
 sudo: false
 
@@ -12,8 +10,16 @@ node_js:
 services:
   - mongodb
 
+directories:
+  - "node_modules"
+
+install:
+  
+
 script:
-  - npm test
+  - cd server
+  - npm install
+  - npm run test
 
 after_success: 
   - npm run coverage
