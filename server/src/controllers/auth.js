@@ -9,13 +9,15 @@ const webtoken =require("jsonwebtoken");
 exports.getUser = async (req, res) => {
     const user = await User.find();
     res.send(user);
+    res.status(200);
 };
 
 exports.registerUser = async (req, res) => {
 
     const { error } = registerValidation(req.body);
     if (error) {
-        res.status(400).send(error.details[0].message);
+        res.status(400);
+        res.send(error.details[0].message);
     }
 
     const hashed = await bcrypt.genSalt(10);
@@ -25,7 +27,8 @@ exports.registerUser = async (req, res) => {
         const { email } = req.body;
         const emailExist = await User.findOne({ email: email });
         if (emailExist) {
-            res.status(400).send({error: "Email exists already"});
+            res.status(400);
+            res.send({error: "Email exists already"});
         }
         const user = new User({
             name: req.body.name,
@@ -35,7 +38,7 @@ exports.registerUser = async (req, res) => {
         const savedUser= await user.save();
         res.send({ user: user._id, name: user.name, email: user.email});
     } catch (error) {
-        res.status(404).send(error);        
+        res.send(error);        
     }
     
 };
@@ -44,18 +47,22 @@ exports.loginUser = async (req, res) => {
 
     const { error } = loginValidation(req.body);
     if (error) {
-        res.status(400).send(error.details[0].message);
+        res.status(400);
+        res.send(error.details[0].message);
     }
     const user = await User.findOne({ email: req.body.email });
     if (!user) {
-        res.status(400).send("Wrong email");
+        res.status(400);
+        res.send("Wrong email");
     }
     const pass = await bcrypt.compare(req.body.password, user.password);
     if (!pass) {
-        res.status(400).send("Wrong password");
+        res.status(400);
+        res.send("Wrong password");
     }
 
-    const wtoken = webtoken.sign({_id: user._id}, process.env.TOKEN_KEY );
-    res.header("auth-token", wtoken).send(wtoken);
+    const wtoken = webtoken.sign({ _id: user._id}, "jsjhdqsdjlqhq" );
+    
+    res.header("auth-token", wtoken);
+    res.send(wtoken);
 };
-
