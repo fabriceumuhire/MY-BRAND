@@ -1,6 +1,10 @@
-sudo: false
-
 language: node_js
+
+os: linux
+
+dist: xenial
+
+sudo: false
 
 node_js:
   - "node"
@@ -9,6 +13,9 @@ services:
   - mongodb
 
 script:
+  - npm test
+
+after_success: 
   - npm run coverage
 
 notifications:
