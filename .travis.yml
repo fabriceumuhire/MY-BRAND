@@ -5,7 +5,7 @@ env: MONGO_URL_TEST=mongodb://localhost:27017/blogdb
 sudo: false
 
 node_js:
-  - "node"
+  - "stable"
 
 services:
   - mongodb
@@ -13,17 +13,13 @@ services:
 directories:
   - "node_modules"
 
-install:
-  
-
 script:
   - cd server
   - npm install
-  - npm run start
   - npm run test
 
 after_success: 
-  - npm run coverage
+  - npm run coveralls
 
 notifications:
   email: false

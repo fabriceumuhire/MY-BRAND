@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "./src/index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "test": "mocha src/test/*",
-    "coverage": "nyc npm run test"
+    "coverage": "nyc npm run test",
+    "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "keywords": [],
   "author": "Fabrice Umuhire",

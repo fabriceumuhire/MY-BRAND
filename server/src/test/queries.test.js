@@ -1,5 +1,5 @@
 const chai = require("chai");
-const server = require("../index");
+const app = require("../index");
 const chaiHttp = require("chai-http");
 chai.use(chaiHttp);
 chai.should();
@@ -7,7 +7,7 @@ chai.should();
 describe("Queries API", () => {
   describe("GET /api/routes", () => {
     it("It should GET all queries", (done) => {
-      chai.request(server)
+      chai.request(app)
         .get("/api/routes/queries")
         .end((error,res) => {
           res.should.have.status(200);
@@ -19,7 +19,7 @@ describe("Queries API", () => {
         });
     });
     it("It should not GET any query", (done) => {
-      chai.request(server)
+      chai.request(app)
         .get("/api/routes/querie")
         .end((error,res) => {
           res.should.have.status(404);
@@ -33,7 +33,7 @@ describe("Queries API", () => {
   describe("GET /api/routes", () => {
     it("It should GET a single query", (done) => {
       const queryId = "5f5f9b39c529473654a70809";
-      chai.request(server)
+      chai.request(app)
         .get(`/api/routes/queries/${queryId}`)
         .end((error,res) => {
           res.should.have.status(200);
@@ -44,7 +44,7 @@ describe("Queries API", () => {
     });
     it("It should not GET a single query", (done) => {
       const queryId = "5f5f9b39c5294736";
-      chai.request(server)
+      chai.request(app)
         .get(`/api/routes/queries/${queryId}`)
         .end((error,res) => {
           if (error) return done(error);
@@ -63,7 +63,7 @@ describe("Queries API", () => {
         subject: "JS Performance solution Array testing",
         message: "Postman is a scalable API testing tool that quickly integrates into CI/CD pipeline."
       }
-      chai.request(server)
+      chai.request(app)
         .post("/api/routes/queries")
         .send(queries)
         .end((error,res) => {
