@@ -4,11 +4,11 @@ require('dotenv').config();
 require("../utils/cloudinary");
 const cloudinary = require('cloudinary');
 const { articleValidation } = require("../validators/articles");
-const Joi = require("@hapi/joi");
 
 exports.getAll = async (req, res) => {
     const articles = await Blog.find();
     res.send(articles);
+    res.status(200);
 };
 
 exports.postOne = async (req, res) => {
@@ -39,7 +39,7 @@ exports.getOne = async (req, res) => {
         res.send(articles);
     } catch {
         res.status(404);
-        res.send({ error: "Article doesn't exist!" });
+        //res.send({ error: "Article doesn't exist!" });
     }
 };
 
@@ -51,14 +51,14 @@ exports.updateOne = async (req, res) => {
     try {
         cloudinary.v2.uploader.upload(req.files.image.tempFilePath, async (error,result) => {
             await Blog.findOneAndUpdate({
-            _id: req.params.id,
+            //_id: req.params.id,
             blogImage: result.url,
             publicId: result.public_id,
             });
         });
     res.status(200);
     } catch {
-        res.status(400);
+        res.status(404);
         res.send({ error: "Image doesn't exist!" });
     }
 
@@ -78,8 +78,7 @@ exports.updateOne = async (req, res) => {
         await articles.save();
         res.send(articles);
     } catch {
-        res.status(404);
-        res.send({ error: "Article doesn't exist!" });
+        res.status(405).send({ error: "Article doesn't exist!" });
     }
 
 };

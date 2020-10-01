@@ -8,7 +8,7 @@ module.exports = function (req, res, next) {
         res.status(401).send("Not authorization");
     }
     try {
-        const verification = jwtoken.verify(token, process.env.TOKEN_KEY);
+        const verification = jwtoken.verify(token, "jsjhdqsdjlqhq");
         req.user = verification;
         next();
     } catch (error) {

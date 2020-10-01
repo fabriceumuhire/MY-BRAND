@@ -1,6 +1,11 @@
 # Ignore tmp files
+tmp/*
 src/tmp/*
 # Ignore node modules
 node_modules/*
 # Ignore .env file
 src/utils/.env
+# Ignore coverage
+coverage/
+# Ignore nyc output
+.nyc_output/*

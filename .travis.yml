@@ -1,0 +1,22 @@
+language: node_js
+
+env: MONGO_URL_TEST=mongodb://localhost:27017/blogdb
+
+sudo: false
+
+node_js:
+  - "stable"
+
+services:
+  - mongodb
+
+directories:
+  - "node_modules"
+
+script:
+  - cd server
+  - npm install
+  - npm run coveralls
+
+notifications:
+  email: false
