@@ -3,7 +3,7 @@ const { registerValidation, loginValidation } = require("../validators/user");
 const Joi = require("@hapi/joi");
 const bcrypt = require("bcryptjs");
 const webtoken =require("jsonwebtoken");
-
+require('dotenv').config({ path: "../utils/dotenv"});
 
 
 exports.getUser = async (req, res) => {
@@ -48,14 +48,15 @@ exports.loginUser = async (req, res) => {
     }
     const user = await User.findOne({ email: req.body.email });
     if (!user) {
-        res.status(400).send("Wrong email");
+        res.status(401).send("Wrong email");
     }
     const pass = await bcrypt.compare(req.body.password, user.password);
     if (!pass) {
-        res.status(400).send("Wrong password");
+        res.status(402).send("Wrong password");
     }
+    
 
-    const wtoken = webtoken.sign({_id: user._id}, process.env.TOKEN_KEY );
-    res.header("auth-token", wtoken).send(wtoken);
+    const wtoken = webtoken.sign({_id: user._id}, `${process.env.TOKEN_KEY}` );
+    res.status(200).header("auth-token", wtoken).send(wtoken);
 };
 

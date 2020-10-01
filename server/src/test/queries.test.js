@@ -1,5 +1,5 @@
-const chai = require("chai");
-const app = require("../index");
+/* const chai = require("chai");
+const server = require("../index");
 const chaiHttp = require("chai-http");
 chai.use(chaiHttp);
 chai.should();
@@ -7,7 +7,7 @@ chai.should();
 describe("Queries API", () => {
   describe("GET /api/routes", () => {
     it("It should GET all queries", (done) => {
-      chai.request(app)
+      chai.request(server)
         .get("/api/routes/queries")
         .end((error,res) => {
           res.should.have.status(200);
@@ -15,11 +15,10 @@ describe("Queries API", () => {
           res.should.be.json;
           done();
           });
-          //res.body.should.be.a("array");
         });
     });
     it("It should not GET any query", (done) => {
-      chai.request(app)
+      chai.request(server)
         .get("/api/routes/querie")
         .end((error,res) => {
           res.should.have.status(404);
@@ -33,7 +32,7 @@ describe("Queries API", () => {
   describe("GET /api/routes", () => {
     it("It should GET a single query", (done) => {
       const queryId = "5f5f9b39c529473654a70809";
-      chai.request(app)
+      chai.request(server)
         .get(`/api/routes/queries/${queryId}`)
         .end((error,res) => {
           res.should.have.status(200);
@@ -44,7 +43,7 @@ describe("Queries API", () => {
     });
     it("It should not GET a single query", (done) => {
       const queryId = "5f5f9b39c5294736";
-      chai.request(app)
+      chai.request(server)
         .get(`/api/routes/queries/${queryId}`)
         .end((error,res) => {
           if (error) return done(error);
@@ -63,7 +62,7 @@ describe("Queries API", () => {
         subject: "JS Performance solution Array testing",
         message: "Postman is a scalable API testing tool that quickly integrates into CI/CD pipeline."
       }
-      chai.request(app)
+      chai.request(server)
         .post("/api/routes/queries")
         .send(queries)
         .end((error,res) => {
@@ -73,4 +72,4 @@ describe("Queries API", () => {
         done();
         });
     });
-  });
+  }); */

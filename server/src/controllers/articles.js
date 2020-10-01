@@ -78,7 +78,7 @@ exports.updateOne = async (req, res) => {
         await articles.save();
         res.send(articles);
     } catch {
-        res.status(404);
+        res.status(405);
         res.send({ error: "Article doesn't exist!" });
     }
 

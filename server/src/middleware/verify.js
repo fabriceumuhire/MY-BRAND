@@ -1,5 +1,5 @@
 const jwtoken = require("jsonwebtoken");
-require('dotenv').config({ path: "../utils/"});
+require('dotenv').config({ path: "../utils/dotenv"});
 
 
 module.exports = function (req, res, next) {
@@ -8,7 +8,7 @@ module.exports = function (req, res, next) {
         res.status(401).send("Not authorization");
     }
     try {
-        const verification = jwtoken.verify(token, process.env.TOKEN_KEY);
+        const verification = jwtoken.verify(token, `${process.env.TOKEN_KEY}`);
         req.user = verification;
         next();
     } catch (error) {
