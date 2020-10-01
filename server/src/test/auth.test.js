@@ -18,27 +18,9 @@ describe("Register API", () => {
         .send(newUser)
         .end((error,res) => {
             res.should.have.status(200);
-            //res.body.should.be.a("array");
-            //res.should.be.json;
         done();
         });
     });
-    /* it("It should not POST user already exists", (done) => {
-        const newUser ={
-            name: "Sys Admin7",
-            email: "sysadmin@hello.com",
-            password: "12ggdsce"
-        }
-        chai.request(server)
-        .post("/api/routes/register")
-        .send(newUser)
-        .end((error,res) => {
-            res.should.have.status(400);
-            //res.should.be.json;
-            //res.body.should.be.a("array");
-        done();
-        });
-    }); */
     it("It should not POST new user(wrong email)", (done) => {
         const newUser ={
             name: "Sys Admin7",
@@ -50,7 +32,6 @@ describe("Register API", () => {
         .send(newUser)
         .end((error,res) => {
             res.should.have.status(400);
-            // res.should.be.json;
         done();
         });
     });
@@ -65,7 +46,6 @@ describe("Register API", () => {
         .send(newUser)
         .end((error,res) => {
             res.should.have.status(400);
-            //res.should.be.json;
         done();
         });
     });
@@ -80,27 +60,11 @@ describe("Register API", () => {
         .send(newUser)
         .end((error,res) => {
             res.should.have.status(400);
-            //res.should.be.json;
         done();
         });
     });
   });
   describe("User login", () => {
-    /* it("Login with valid input", (done) => {
-    //send request to the app
-    const login = {
-        "email": "sysadmin@hello.com",
-        "password": "12ggdsce"
-    }
-    chai.request(server)
-        .post("/api/routes/login")
-        .send(login)
-        .end((error,res) => {
-            res.should.have.status(200);
-            res.headers.should.have.property("auth-token");
-        done();
-        });
-    }); */
     it("Login with invalid password", (done) => {
         const credentials = {
             email: "sysadmin@hello.com",
@@ -112,8 +76,6 @@ describe("Register API", () => {
             .send(credentials)
             .end((error,res) => {
                 res.should.have.status(400);
-                // res.body.should.have.property("error"); 
-                //res.should.be.json;
             done();
             });
         });
@@ -128,8 +90,6 @@ describe("Register API", () => {
             .send(credentials)
             .end((error,res) => {
                 res.should.have.status(400);
-                // res.body.should.have.property("error");
-                //res.should.be.json;
             done();
             });
         });
@@ -141,7 +101,6 @@ describe("Register API", () => {
         .send(newUser)
         .end((error,res) => {
             res.should.have.status(400);
-            // res.should.be.json;
         done();
         });
     });
@@ -150,7 +109,6 @@ describe("Register API", () => {
         .get("/api/routes/register")
         .end((error,res) => {
             res.should.have.status(200);
-            //res.should.be.json;
         done();
         });
     });
