@@ -36,20 +36,9 @@ describe("Article API", () => {
         .get(`/api/routes/articles/${artID}`)
         .end((error,res) => {
           res.should.have.status(200);
-          //res.body.should.be.a("array");
         done();
         });
     });
-    /* it("It should not GET article", (done) => {
-      const artID = "5f65ad0bca66312e5c555ee";
-      chai.request(server)
-        .get(`/api/routes/articles/${artID}`)
-        .end((error,res) => {
-          res.should.have.status(404);
-          //res.body.should.be.a("array");
-        done();
-        });
-    }); */
   }); 
   describe("DELETE /api/routes", () => {
     it("It should DELETE a single article", (done) => {
@@ -59,7 +48,6 @@ describe("Article API", () => {
             .set("auth-token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjY5YWU3NGU3OTViZTA5ZDBkYTM4NzEiLCJpYXQiOjE2MDE0ODEwNTV9.b_rv1Vk80zb_zZWiYFFB8ZsQbY19tXjkOZDWCBEo-p8")
             .end((error,res) => {
               res.should.have.status(204);
-              //res.body.should.be.a("array");
             done();
             });
         });
@@ -70,7 +58,6 @@ describe("Article API", () => {
           .set("auth-token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjY5YWU3NGU3OTViZTA5ZDBkYTM4NzEiLCJpYXQiOjE2MDE0ODEwNTV9.b_rv1Vk80zb_zZWiYFFB8ZsQbY19tXjkOZDWCBEo-p8")
           .end((error,res) => {
             res.should.have.status(404);
-            //res.body.should.be.a("array");
           done();
           });
         });
@@ -89,25 +76,9 @@ describe("Article API", () => {
         .type("form")
         .end((error,res) => {
           res.should.have.status(401);
-          //res.body.should.be.a("array");
         done();
         });
     });
-    /* it("It should UPDATE a new article with auth", (done) => {
-      const artID = "5f70b52b6d7e9b1a78af7250";
-      const newArticle = ({ "title": "JS Performance solution- Updaters", "content": "Updaters: Postman is a scalable API testing tool that quickly integrates into CI/CD pipeline." })
-      chai.request(server)
-        .patch(`/api/routes/articles/${artID}`)
-        .set("auth-token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjY5YWU3NGU3OTViZTA5ZDBkYTM4NzEiLCJpYXQiOjE2MDEyMTY4NTF9.Q8eAgmlwQ3eviURHv6IjlN6JNmutQKIcqk4duTrkgXw")
-        .field(newArticle)
-        .attach("image", `${path.join(__dirname,'../uploads/img/review1.jpg')}`)
-        .type("form")
-        .end((error,res) => {
-          //res.should.have.status(200);
-          res.body.should.be.a("array");
-        done();
-        });
-    }); */
   });
   describe("POST /api/routes/article", () => {
     it("It should POST a new article", (done) => {
@@ -123,10 +94,6 @@ describe("Article API", () => {
         .type("form")
         .end((error,res) => {
           res.should.have.status(200);
-          //res.body.should.be.a("array");
-          //res.should.be.json;
-          
-          //res.body.should.be.a("array");
         done();
         });   
     });
@@ -142,9 +109,6 @@ describe("Article API", () => {
         .type("form")
         .end((error,res) => {
           res.should.have.status(401);
-          //res.body.should.have.property("message").equall("Not authorization");
-          //res.body.should.be.a("array");
-          //res.should.be.json;
         done();
         });
     });
@@ -161,11 +125,8 @@ describe("Article API", () => {
           .type("form")
           .end((error, res) => {
             res.should.have.status(400);
-            //res.body.should.be.a("array");
-            //res.should.be.json;
           done();
           });
-          //res.body.should.be.a("array");
       });
     });
 });

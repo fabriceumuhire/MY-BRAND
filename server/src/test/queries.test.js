@@ -21,9 +21,7 @@ describe("Queries API", () => {
       chai.request(server)
         .get("/api/routes/querie")
         .end((error,res) => {
-          res.should.have.status(404);
-          //res.should.be.json;
-        
+          res.should.have.status(404);        
         done();
         });
         
@@ -36,8 +34,6 @@ describe("Queries API", () => {
         .get(`/api/routes/queries/${queryId}`)
         .end((error,res) => {
           res.should.have.status(200);
-          //res.should.be.json;
-          //res.body.should.be.a("array");
         done();
         });
     });
@@ -48,8 +44,6 @@ describe("Queries API", () => {
         .end((error,res) => {
           if (error) return done(error);
           res.should.have.status(404)
-          //res.should.be.json;
-          //res.body.should.be.a("array");
         done();
         });
     });
@@ -67,8 +61,6 @@ describe("Queries API", () => {
         .send(queries)
         .end((error,res) => {
           res.should.have.status(200);
-          //res.body.should.be.json;
-          //res.body.should.be.a("array");
         done();
         });
     });

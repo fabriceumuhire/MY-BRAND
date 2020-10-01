@@ -7,3 +7,5 @@ node_modules/*
 src/utils/.env
 # Ignore coverage
 coverage/
+# Ignore nyc output
+.nyc_output/*
