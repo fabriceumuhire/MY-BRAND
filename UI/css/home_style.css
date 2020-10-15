@@ -66,42 +66,37 @@ nav a:hover{
  }
 
  #boxes .box2{
-     width: 30%;
      padding: 10px;
      font-size: 24px;
      text-align: left;
      text-justify: auto;
      background: #929292;
-     height: 100%;
+     margin-right: 20px;
  }
 
  #boxes .box{
-    width: 30%;
     padding: 10px;
     font-size: 24px;
     text-align: left;
     text-justify: auto;
-    height: 100%;
     background: #C5C5C5;
     margin-left: 20px;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 #boxes .box1{
-    width: 30%;
     padding: 10px;
     font-size: 24px;
     text-align: left;
     text-justify: auto;
-    height: 100%;
     background-color: #ada6a6;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 footer {
-
+    position: fixed;
+    bottom: 0%;
     padding: 1px;
-    margin-top: 9%;
     background: #739FE1;
     text-align: left;
     width: 100%;
@@ -123,7 +118,7 @@ footer a {
 
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 425px) {
     
     .container{
         width: 90%;
@@ -158,14 +153,13 @@ footer a {
     }
     #boxes{
         display: table-row;
-        height: auto;
         width: 90%;
     }
 
     #boxes .box2 {
-        width: 80%;
         margin-top: 2%;
         margin-left: 4%;
+        margin-right: 10px;
         font-size: 16px;
         text-align: left;
         background: #c4c3c3;
@@ -173,7 +167,6 @@ footer a {
     }
 
     #boxes .box {
-        width: 80%;
         margin-top: 2%;
         margin-left: 4%;
         font-size: 16px;
@@ -182,7 +175,6 @@ footer a {
     }
 
     #boxes .box1{
-        width: 80%;
         margin-top: 2%;
         margin-left: 4%;
         font-size: 16px;
@@ -203,14 +195,15 @@ footer a {
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-device-width: 100px)and (max-width: 780px) {
     
     .container{
-        width: 80%;
+        width: 90%;
     }
 
 
     header {
+        margin-bottom: 10px;
         padding-top: 2px;
         padding-left: 2px;
         padding-right: 0px;
@@ -241,21 +234,21 @@ footer a {
     }
 
     #boxes .box2 {
-        width: 70%;
+        margin-top: 2%;
         margin-left: 4%;
+        margin-right: 10px;
+        margin-bottom: 10px;
         font-size: 14px;
         text-align: left;
     }
 
     #boxes .box {
-        width: 70%;
         margin-left: 4%;
         font-size: 14px;
         text-align: left;
     }
 
     #boxes .box1{
-        width: 70%;
         margin-top: 2%;
         margin-left: 4%;
         font-size: 14px;
@@ -265,7 +258,7 @@ footer a {
     footer {
 
         padding: 0;
-        margin-top: 2%;
+        margin-top: 10px;
         height: 5%;
     }
 
@@ -275,13 +268,14 @@ footer a {
     }
 }
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+@media screen and (min-device-width : 426px) and (max-device-width : 768px){
     .container{
         width: 90%;
     }
 
 
     header {
+        margin-bottom: 20px;
         padding-top: 5px;
         padding-left: 5px;
         padding-right: 0px;
@@ -309,6 +303,7 @@ footer a {
     }
     #boxes{
         display: table-row;
+        width: 90%;
     }
 
     #boxes .box2 {
