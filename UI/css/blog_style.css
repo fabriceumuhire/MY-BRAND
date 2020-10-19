@@ -2,6 +2,7 @@ body {
     margin: 0;
     font: 15px/1.5 Georgia, 'Times New Roman', Times, serif;
     background: #f0f0f0;
+    margin-bottom: 25px;
 }
 .container {
     width: 99%;
@@ -9,27 +10,23 @@ body {
 }
 header {
     background: #739FE1;
+    height: 60px;
 }
-
-header::after {
-    content: '';
-    display: table;
-    clear: both;
-}
+header .menu-btn {
+    display: none;
+    }
 
 .logo {
     float: left;
-    margin-left: 10px;
-    width: 8%;
-    padding-top: 2px;
-    padding-bottom: -5px;
+    margin-left: 20px;
+    width: 6%;
+    margin-top: 0%;
 }
 
 nav {
     float: right;
     
 }
-
 .avatar {
     width: 25px;
     padding: 0px;
@@ -37,8 +34,9 @@ nav {
 }
 
 nav ul {
-    margin: 0;
+    margin-top: 20px;
     padding: 0;
+    overflow: hidden;
     list-style: none;
 }
 
@@ -141,7 +139,6 @@ footer {
     background: #739FE1;
     text-align: left;
     width: 100%;
-    float: left;
     height: 5%;
 }
 
@@ -165,29 +162,13 @@ footer a {
         width: 100%;
     }
 
-
-    header {
-        padding-top: 2px;
-        padding-left: 2px;
-        padding-right: 0px;
-        height: 10%;
-    }
-
-
-    header nav a {
-        font-size: 12px;
-        height: auto;
-
-    }
-
     header nav li {
-        padding: 0 2px 0 2px;
+        padding: 0 10px 0 10px;
     }
 
     header #logo img {
         height: auto;
-        margin-left: 40px;
-        width: 50px;
+        margin-left: 20px;
     }
 
     header nav img {
@@ -203,12 +184,6 @@ footer a {
         grid-auto-rows: auto;
         gap: 40px;
         padding-top: 30px;
-    }
-
-
-    footer {
-        margin-top: 20px;
-        height: 5%;
     }
     footer li {
         padding-right: 10px;
@@ -230,32 +205,10 @@ footer a {
         margin-left: 40px;
     }
 
-
-    header {
-        padding-top: 5px;
-        padding-left: 5px;
-        padding-right: 0px;
-        height: 5%;
-    }
-
-
-    header nav a {
-        font-size: 12px;
-        margin-right: 2px;
-
-    }
-
-    header nav li {
-        padding: 0 2px 0 2px;
-    }
-
     header #logo img {
         height: auto;
-        width: 50px;
-    }
-
-    header nav img {
-        width: 15px;
+        width: 6%px;
+        margin-top: 25px;
     }
 
     .cards {
@@ -274,6 +227,7 @@ footer a {
     footer {
 
         position: fixed;
+        bottom: 0%;
         height: 3%;
     }
 
@@ -282,7 +236,7 @@ footer a {
 
     }
 }
-@media only screen and (min-device-width : 480px) and (max-device-width : 768px){
+@media only screen and (min-device-width : 426px) and (max-device-width : 768px){
     .container{
         width: 90%;
     }
@@ -293,29 +247,16 @@ footer a {
         margin-left: 40px;
     }
 
-
-    header {
-        padding-top: 5px;
-        padding-left: 5px;
-        padding-right: 0px;
-        height: 10%;
-    }
-
-
     header nav a {
         font-size: 12px;
         margin-right: auto;
 
     }
 
-    header nav li {
-        
-        padding: 0 2px 0 2px;
-    }
-
     header #logo img {
-        height: auto;
-        width: 50px;
+        margin-left: 0px;
+        width: 6%;
+        margin-top: 0%;
     }
 
     header nav img {
@@ -328,9 +269,10 @@ footer a {
         grid-auto-rows: auto;
         gap: 40px;
         padding-top: 30px;
+        padding-bottom: 40px;
     }
     footer {
-        position: relative;
+        position: fixed;
         height: 3%;
     }
 
