@@ -4,11 +4,16 @@ body {
     background: #f0f0f0;
 }
 .container {
-    width: 90%;
+    width: 99%;
     margin: 0 auto;
 }
 header {
     background: #739FE1;
+    height: 70px;
+}
+
+header .menu-btn {
+    display: none;
 }
 
 header::after {
@@ -19,7 +24,7 @@ header::after {
 
 .logo {
     float: left;
-    width: 8%;
+    width: 7%;
 }
 
 nav {
@@ -34,7 +39,7 @@ nav {
 }
 
 nav ul {
-    margin: 0;
+    margin: 20px;
     padding: 0;
     list-style: none;
 }
@@ -43,7 +48,7 @@ nav li {
     display: inline;
     margin-left: 0px;
     padding-top: 40px;
-    padding-right: 25px;
+    padding-right: 20px;
 }
 
 nav a {
@@ -121,15 +126,7 @@ footer a {
 @media only screen and (min-device-width: 320px) and (max-device-width: 425px) {
     
     .container{
-        width: 90%;
-    }
-
-
-    header {
-        padding-top: 5px;
-        padding-left: 5px;
-        padding-right: 0px;
-        height: 5%;
+        width: 100%;
     }
 
 
@@ -195,12 +192,11 @@ footer a {
     }
 }
 
-@media only screen and (min-device-width: 100px)and (max-width: 780px) {
+@media only screen and (min-device-width: 100px)and (max-width: 1024px) {
     
     .container{
-        width: 90%;
+        width: 99%;
     }
-
 
     header {
         margin-bottom: 10px;
@@ -220,6 +216,9 @@ footer a {
     header nav li {
         padding: 0 2px 0 2px;
     }
+    nav .menu-btn {
+        display: none;
+    }
 
     header #logo img {
         height: auto;
@@ -231,6 +230,8 @@ footer a {
     }
     #boxes{
         display: table-row;
+        flex-direction: column;
+        margin-top: 10px;
     }
 
     #boxes .box2 {
@@ -259,7 +260,7 @@ footer a {
 
         padding: 0;
         margin-top: 10px;
-        height: 5%;
+        height: 3%;
     }
 
     footer a {
@@ -270,7 +271,7 @@ footer a {
 
 @media screen and (min-device-width : 426px) and (max-device-width : 768px){
     .container{
-        width: 90%;
+        width: 99%;
     }
 
 
@@ -281,7 +282,6 @@ footer a {
         padding-right: 0px;
         height: 10%;
     }
-
 
     header nav a {
         font-size: 12px;
