@@ -4,11 +4,16 @@ body {
     background: #f0f0f0;
 }
 .container {
-    width: 90%;
+    width: 99%;
     margin: 0 auto;
 }
+
 header {
     background: #739FE1;
+}
+
+header .menu-btn {
+    display: none;
 }
 
 header::after {
@@ -19,7 +24,7 @@ header::after {
 
 .logo {
     float: left;
-    width: 8%;
+    width: 7%;
 }
 
 nav {
@@ -27,14 +32,8 @@ nav {
     
 }
 
-.avatar {
-    width: 25px;
-    padding: 0px;
-    margin-top: 25px;
-}
-
 nav ul {
-    margin: 0;
+    margin-top: 20px;
     padding: 0;
     list-style: none;
 }
@@ -43,7 +42,7 @@ nav li {
     display: inline;
     margin-left: 0px;
     padding-top: 40px;
-    padding-right: 25px;
+    padding-right: 20px;
 }
 
 nav a {
@@ -61,12 +60,11 @@ nav a:hover{
 .contain{
     width: 100%;
     margin: 2px;
-    overflow: hidden;
 }
 
 aside#sidebar {
-    float: right;
-    width: 40%;
+    float: left;
+    width: 60%;
     margin-top: 40px;
     margin-right: 20px;
     font-size: large;
@@ -75,7 +73,7 @@ aside#sidebar {
 
 article#main-col{
     float: left;
-    width: 50%;
+    width: 70%;
     font-size: larger;
     margin-left: 20px;
 }
@@ -109,15 +107,6 @@ footer a {
         width: 100%;
     }
 
-
-    header {
-        padding-top: 5px;
-        padding-left: 5px;
-        padding-right: 0px;
-        height: 5%;
-    }
-
-
     header nav a {
         font-size: 12px;
         margin-right: 2px;
@@ -136,19 +125,26 @@ footer a {
     header nav img {
         width: 15px;
     }
-    
+
+    .contain{
+        margin-top: 60px;
+        margin-left: 20px;
+        width: 90%;
+    }
+
     article#main-col{
+        display: table-row;
         float: left;
-        width: 80%;
+        width: 75%;
         margin-top: 20px;
         margin-left: 15px;
     }
     aside#sidebar {
         float: left;
-        width: 75%;
+        width: 90%;
+        font-size: 24px;
         margin-top: 30px;
         margin-left: 15px;
-        font-size: 20px;
     }
 
     footer {
@@ -163,7 +159,7 @@ footer a {
     }
 }
 
-@media only screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
     
     .container{
         width: 100%;
@@ -196,18 +192,6 @@ footer a {
     header nav img {
         width: 15px;
     }
-    article#main-col{
-
-        width: 80%;
-        margin-left: 15px;
-    }
-    aside#sidebar {
-        float: left;
-        width: 75%;
-        margin-top: 30px;
-        margin-left: 15px;
-        font-size: 25px;
-    }
 
     footer {
         margin-top: 2%;
@@ -221,7 +205,7 @@ footer a {
 
 @media only screen and (min-device-width : 426px) and (max-device-width : 768px){
     .container{
-        width: 90%;
+        width: 99%;
     }
 
 
@@ -253,12 +237,10 @@ footer a {
         width: 15px;
     }
     article#main-col{
-        float: left;
         width: 90%;
         margin-left: 15px;
     }
     aside#sidebar {
-        float: left;
         width: 85%;
         margin-top: 30px;
         margin-left: 15px;

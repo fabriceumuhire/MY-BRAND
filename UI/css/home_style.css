@@ -4,11 +4,15 @@ body {
     background: #f0f0f0;
 }
 .container {
-    width: 90%;
+    width: 99%;
     margin: 0 auto;
 }
 header {
     background: #739FE1;
+}
+
+header .menu-btn {
+    display: none;
 }
 
 header::after {
@@ -19,7 +23,7 @@ header::after {
 
 .logo {
     float: left;
-    width: 8%;
+    width: 7%;
 }
 
 nav {
@@ -34,7 +38,7 @@ nav {
 }
 
 nav ul {
-    margin: 0;
+    margin: 20px;
     padding: 0;
     list-style: none;
 }
@@ -43,7 +47,7 @@ nav li {
     display: inline;
     margin-left: 0px;
     padding-top: 40px;
-    padding-right: 25px;
+    padding-right: 20px;
 }
 
 nav a {
@@ -72,6 +76,7 @@ nav a:hover{
      text-justify: auto;
      background: #929292;
      margin-right: 20px;
+     border-radius: 10px;
  }
 
  #boxes .box{
@@ -82,6 +87,7 @@ nav a:hover{
     background: #C5C5C5;
     margin-left: 20px;
     margin-right: 10px;
+    border-radius: 10px;
 }
 
 #boxes .box1{
@@ -91,6 +97,7 @@ nav a:hover{
     text-justify: auto;
     background-color: #ada6a6;
     margin-right: 10px;
+    border-radius: 10px;
 }
 
 footer {
@@ -121,15 +128,7 @@ footer a {
 @media only screen and (min-device-width: 320px) and (max-device-width: 425px) {
     
     .container{
-        width: 90%;
-    }
-
-
-    header {
-        padding-top: 5px;
-        padding-left: 5px;
-        padding-right: 0px;
-        height: 5%;
+        width: 100%;
     }
 
 
@@ -153,6 +152,8 @@ footer a {
     }
     #boxes{
         display: table-row;
+        align-items: center;
+        justify-content: center;
         width: 90%;
     }
 
@@ -195,12 +196,11 @@ footer a {
     }
 }
 
-@media only screen and (min-device-width: 100px)and (max-width: 780px) {
+@media only screen and (min-device-width: 100px)and (max-width: 600px) {
     
     .container{
-        width: 90%;
+        width: 99%;
     }
-
 
     header {
         margin-bottom: 10px;
@@ -220,6 +220,9 @@ footer a {
     header nav li {
         padding: 0 2px 0 2px;
     }
+    nav .menu-btn {
+        display: none;
+    }
 
     header #logo img {
         height: auto;
@@ -229,37 +232,47 @@ footer a {
     header nav img {
         width: 15px;
     }
+
     #boxes{
         display: table-row;
+        flex-direction: column;
+        height: 80%;
+        width: 90%;
     }
 
     #boxes .box2 {
+        width: 80%;
         margin-top: 2%;
         margin-left: 4%;
-        margin-right: 10px;
-        margin-bottom: 10px;
-        font-size: 14px;
+        font-size: 16px;
         text-align: left;
+        background: #c4c3c3;
+        height: auto;
     }
 
     #boxes .box {
+        width: 80%;
+        margin-top: 2%;
         margin-left: 4%;
-        font-size: 14px;
+        font-size: 16px;
         text-align: left;
+        height: auto;
     }
 
     #boxes .box1{
+        width: 80%;
         margin-top: 2%;
         margin-left: 4%;
-        font-size: 14px;
+        font-size: 16px;
         text-align: left;
+        height: auto;
     }
 
     footer {
 
         padding: 0;
         margin-top: 10px;
-        height: 5%;
+        height: 3%;
     }
 
     footer a {
@@ -268,9 +281,9 @@ footer a {
     }
 }
 
-@media screen and (min-device-width : 426px) and (max-device-width : 768px){
+@media screen and (min-device-width : 426px) and (max-device-width : 600px){
     .container{
-        width: 90%;
+        width: 99%;
     }
 
 
@@ -281,7 +294,6 @@ footer a {
         padding-right: 0px;
         height: 10%;
     }
-
 
     header nav a {
         font-size: 12px;
@@ -303,31 +315,37 @@ footer a {
     }
     #boxes{
         display: table-row;
-        width: 90%;
+        height: auto;
+        width: auto;
     }
 
     #boxes .box2 {
-        width: 500px;
+        width: 95%;
         margin-top: 2%;
         margin-left: 4%;
         font-size: 16px;
         text-align: left;
+        background: #c4c3c3;
+        height: auto;
     }
 
     #boxes .box {
-        width: 500px;
+        width: 95%;
         margin-top: 2%;
         margin-left: 4%;
         font-size: 16px;
         text-align: left;
+        height: auto;
+
     }
 
     #boxes .box1{
-        width: 500px;
+        width: 95%;
         margin-top: 2%;
         margin-left: 4%;
         font-size: 16px;
         text-align: left;
+        height: auto;
     }
 
     footer {
