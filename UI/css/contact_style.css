@@ -10,7 +10,10 @@ body {
 }
 header {
     background: #739FE1;
-    height: 60px;
+}
+
+header .menu-btn {
+    display: none;
 }
 
 header::after {
@@ -30,7 +33,7 @@ nav {
 }
 
 nav ul {
-    margin-top: 20px;
+    margin-top: 30px;
     padding: 0;
     list-style: none;
 }
@@ -168,17 +171,8 @@ footer li {
 @media only screen and (min-device-width: 320px) and (max-device-width: 468px) {
     
     .container{
-        width: 90%;
+        width: 100%;
     }
-
-
-    header {
-        padding-top: 5px;
-        padding-left: 5px;
-        padding-right: 0px;
-        height: 5%;
-    }
-
 
     header nav a {
         font-size: 12px;
@@ -187,7 +181,7 @@ footer li {
     }
 
     header nav li {
-        padding: 0 4px 0 4px;
+        padding: 0 2px 0 2px;
     }
 
     header #logo img {
@@ -198,6 +192,25 @@ footer li {
     header nav img {
         width: 15px;
     }
+    aside#main-col .page-title {
+        margin-left: 20px;
+    }
+    section .box{
+        float: left;
+        width: 50%;
+        border: #F4F4F4;
+        padding: 10px;
+        font-size: 16px;
+        text-align: left;
+    }
+   
+   section .queries{
+       float: left;
+       width: 60%;
+       margin-left: 10px;
+       margin-top: 40px;
+       font-size: 14px;
+   }
     
     .inputs {
         float: left;
@@ -246,10 +259,10 @@ footer li {
     }
 }
 
-@media screen and (min-width: 100px)  and (max-width: 319px) {
+@media screen and (min-width: 769px)  and (max-width: 1024px) {
     
     .container{
-        width: 80%;
+        width: 100%;
     }
 
 
@@ -277,6 +290,9 @@ footer li {
 
     header nav img {
         width: 15px;
+    }
+    section .box{
+        float: left;
     }
     .inputs {
         float: left;
@@ -320,7 +336,7 @@ footer li {
 
 @media only screen and (min-device-width : 469px) and (max-device-width : 768px){
     .container{
-        width: 99%;
+        width: 100%;
     }
 
 
