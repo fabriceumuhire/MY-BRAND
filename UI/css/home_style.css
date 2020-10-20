@@ -31,14 +31,9 @@ nav {
     
 }
 
-.avatar {
-    width: 25px;
-    padding: 0px;
-    margin-top: 25px;
-}
-
 nav ul {
     margin: 20px;
+    margin-top: 30px;
     padding: 0;
     list-style: none;
 }
@@ -59,7 +54,6 @@ nav a {
 
 nav a:hover{
     color: teal;
-    font-weight: bold;
 } 
 
  #boxes{
@@ -125,7 +119,7 @@ footer a {
 
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 425px) {
+@media screen and (min-device-width: 320px) and (max-device-width: 425px) {
     
     .container{
         width: 100%;
