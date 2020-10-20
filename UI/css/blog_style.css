@@ -156,7 +156,7 @@ footer a {
 
 }
 
-@media only screen and (min-width: 100px) and (max-width: 1080px) {
+@media only screen and (max-width: 1080px) {
     
     .container{
         width: 100%;
@@ -196,13 +196,14 @@ footer a {
     }
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 425px) {
+@media only screen and (min-device-width: 100px) and (max-device-width: 300px) {
     
     .card{
         width: 60%;
         height: 100%;
         margin-top: 20px;
         margin-left: 40px;
+        display: table-row;
     }
 
     header #logo img {
