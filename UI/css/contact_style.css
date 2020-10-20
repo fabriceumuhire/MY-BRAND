@@ -63,7 +63,7 @@ li {
 
 #darkgray{
     padding: 15px;
-    height: auto;
+    height: 100%;
     width: 95%;
     margin-left: 20px;
     margin-top: 0px;
@@ -74,6 +74,7 @@ li {
 }
 
 #main{
+    width: 95%;
      margin-top: 20px;
      display: flex;
      flex-wrap: wrap;
@@ -81,7 +82,7 @@ li {
 
 section .box{
      float: right;
-     width: 40%;
+     width: 45%;
      margin-right: 4%;
      border: #F4F4F4;
      padding: 10px;
@@ -94,7 +95,7 @@ section .queries{
     width: 40%;
     margin-left: 20px;
     margin-top: 20px;
-    font-size: 14px;
+    font-size: 16px;
 }
 
  aside#main-col .page-title {
@@ -197,31 +198,35 @@ footer li {
     }
     section .box{
         float: left;
-        width: 50%;
+        width: 90%;
         border: #F4F4F4;
         padding: 10px;
-        font-size: 16px;
+        font-size: 18px;
         text-align: left;
     }
    
    section .queries{
        float: left;
        width: 60%;
-       margin-left: 10px;
+       margin-left: 20px;
        margin-top: 40px;
-       font-size: 14px;
+       font-size: 18px;
    }
     
     .inputs {
-        float: left;
-        width: 25%;
+        float: center;
+        width: 95%;
         margin-top: 6px;
+
       }
       
       .require {
         float: left;
-        width: 75%;
+        width: 95%;
         margin-top: 6px;
+      }
+      .quote .require {
+        width: 95%;
       }
       
       /* Clear floats after the columns */
@@ -242,8 +247,8 @@ footer li {
       }
       
       input[type=submit] {
-          width: auto;
-        float: right;
+        width: auto;
+        float: left;
       }
     
     footer {
@@ -296,13 +301,13 @@ footer li {
     }
     .inputs {
         float: left;
-        width: 25%;
+        width: 40%;
         margin-top: 6px;
       }
       
       .require {
         float: left;
-        width: 75%;
+        width: 90%;
         margin-top: 6px;
       }
       
