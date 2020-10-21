@@ -1,0 +1,387 @@
+body {
+    margin: 0;
+    font: 15px/1.5 Georgia, 'Times New Roman', Times, serif;
+    background: #f0f0f0;
+}
+.container {
+    width: 100%;
+    margin: 0 auto;
+    
+}
+header {
+    background: #739FE1;
+}
+
+header .menu-btn {
+    display: none;
+}
+
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.logo {
+    float: left;
+    margin-left: 20px;
+    width: 6%;
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    margin-top: 30px;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline;
+    margin-left: 0px;
+    padding-top: 40px;
+    padding-right: 20px;
+}
+
+nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+nav a:hover{
+    color: teal;
+} 
+
+li {
+    list-style: none;
+    font-size: bold;
+}
+
+#darkgray{
+    padding: 15px;
+    height: 100%;
+    width: 95%;
+    margin-left: 20px;
+    margin-top: 0px;
+    background: #7e7979;
+    border: 0;
+    border: 5px solid #739FE1;
+    border-radius: 10px;
+}
+
+#main{
+    width: 95%;
+     margin-top: 20px;
+     display: flex;
+     flex-wrap: wrap;
+ }
+
+section .box{
+     float: right;
+     width: 45%;
+     margin-right: 4%;
+     border: #F4F4F4;
+     padding: 10px;
+     font-size: 16px;
+     text-align: left;
+ }
+
+section .queries{
+    float: left;
+    width: 40%;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+ aside#main-col .page-title {
+     margin-bottom: 20px;
+ }
+
+ .inputs {
+    float: left;
+    width: 20%;
+    margin-top: 4px;
+  }
+  
+  .require {
+    float: left;
+    width: 90%;
+    margin-top: 4px;
+  }
+  
+  /* Clear floats after the columns */
+  .quote:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  input[type=email], select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+
+  input[type=text], textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+
+  button {
+    background-color: #739FE1;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+  }
+
+
+
+footer {
+    position: fixed;
+    bottom: 0%;
+    background: #739FE1;
+    text-align: left;
+    width: 100%;
+    float: left;
+    height: 5%;
+}
+
+footer a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 12px;
+}
+footer li {
+    display: inline-block;
+    padding: 0 10px 0 10px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 468px) {
+    
+    .container{
+        width: 100%;
+    }
+
+    header nav a {
+        font-size: 12px;
+        margin-right: 2px;
+
+    }
+
+    header nav li {
+        padding: 0 2px 0 2px;
+    }
+
+    header #logo img {
+        height: auto;
+        width: 50px;
+    }
+
+    header nav img {
+        width: 15px;
+    }
+    aside#main-col .page-title {
+        margin-left: 20px;
+    }
+    section .box{
+        float: left;
+        width: 90%;
+        border: #F4F4F4;
+        padding: 10px;
+        font-size: 18px;
+        text-align: left;
+    }
+   
+   section .queries{
+       float: left;
+       width: 60%;
+       margin-left: 20px;
+       margin-top: 40px;
+       font-size: 18px;
+   }
+    
+    .inputs {
+        float: center;
+        width: 95%;
+        margin-top: 6px;
+
+      }
+      
+      .require {
+        float: left;
+        width: 95%;
+        margin-top: 6px;
+      }
+      .quote .require {
+        width: 95%;
+      }
+      
+      /* Clear floats after the columns */
+      .quote:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      
+      input[type=text], select, textarea {
+        width: 100%;
+        resize: vertical;
+      }
+      
+      label {
+        padding: 12px 12px 12px 0;
+        display: inline-block;
+      }
+      
+      input[type=submit] {
+        width: auto;
+        float: left;
+      }
+    
+    footer {
+
+        padding: 0;
+        margin-top: 2%;
+        height: 3%;
+    }
+
+    footer a {
+        font-size: 12px;
+
+    }
+}
+
+@media screen and (min-width: 769px)  and (max-width: 1024px) {
+    
+    .container{
+        width: 100%;
+    }
+
+
+    header {
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-right: 0px;
+        height: 15%;
+        /*margin-right: auto;*/
+    }
+    header nav a {
+        font-size: 12px;
+        margin-right: auto;
+
+    }
+
+    header nav li {
+        padding: 0 4px 0 4px;
+    }
+
+    header #logo img {
+        height: auto;
+        width: 50px;
+    }
+
+    header nav img {
+        width: 15px;
+    }
+    section .box{
+        float: left;
+    }
+    .inputs {
+        float: left;
+        width: 40%;
+        margin-top: 6px;
+      }
+      
+      .require {
+        float: left;
+        width: 90%;
+        margin-top: 6px;
+      }
+      
+      /* Clear floats after the columns */
+      .quote:after {
+        content: "";
+        display: table;
+        width: 100%;
+      }
+      
+      input[type=text], select, textarea {
+        width: 100%;
+        resize: vertical;
+      }
+      #darkgray{
+        height: auto;
+        width: 100%;
+        }
+    footer {
+
+        padding: 0;
+        margin-top: 2%;
+        height: 5%;
+    }
+
+    footer a {
+        font-size: 12px;
+
+    }
+}
+
+@media only screen and (min-device-width : 469px) and (max-device-width : 768px){
+    .container{
+        width: 100%;
+    }
+
+
+    header {
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-right: 0px;
+        height: 10%;
+    }
+
+
+    header nav a {
+        font-size: 12px;
+        margin-right: auto;
+
+    }
+
+    header nav li {
+        
+        padding: 0 4px 0 4px;
+    }
+
+    header #logo img {
+        height: auto;
+        width: 50px;
+    }
+
+    header nav img {
+        width: 15px;
+    }
+
+    footer {
+
+        padding: 0;
+        margin-top: 2%;
+        height: 3%;
+    }
+
+    footer a {
+        font-size: 12px;
+
+    }
+}
