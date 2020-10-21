@@ -1,0 +1,356 @@
+body {
+    margin: 0;
+    font: 15px/1.5 Georgia, 'Times New Roman', Times, serif;
+    background: #f0f0f0;
+}
+.container {
+    width: 99%;
+    margin: 0 auto;
+}
+header {
+    background: #739FE1;
+}
+
+header .menu-btn {
+    display: none;
+}
+
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.logo {
+    float: left;
+    width: 7%;
+}
+
+nav {
+    float: right;
+    
+}
+
+nav ul {
+    margin: 20px;
+    margin-top: 30px;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline;
+    margin-left: 0px;
+    padding-top: 40px;
+    padding-right: 20px;
+}
+
+nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+nav a:hover{
+    color: teal;
+} 
+
+ #boxes{
+     margin-top: 30px;
+     display: flex;
+     height: 100%;
+     width: 100%;
+ }
+
+ #boxes .box2{
+     padding: 10px;
+     font-size: 24px;
+     text-align: left;
+     text-justify: auto;
+     background: #929292;
+     margin-right: 20px;
+     border-radius: 10px;
+ }
+
+ #boxes .box{
+    padding: 10px;
+    font-size: 24px;
+    text-align: left;
+    text-justify: auto;
+    background: #C5C5C5;
+    margin-left: 20px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+#boxes .box1{
+    padding: 10px;
+    font-size: 24px;
+    text-align: left;
+    text-justify: auto;
+    background-color: #ada6a6;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0%;
+    padding: 1px;
+    background: #739FE1;
+    text-align: left;
+    width: 100%;
+    float: left;
+    height: 5%;
+}
+
+footer li {
+    float: left;
+    display: inline;
+    margin-left: 0px;
+    padding: 0 10px 0 10px;
+}
+
+footer a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 12px;
+
+}
+
+@media screen and (min-device-width: 320px) and (max-device-width: 425px) {
+    
+    .container{
+        width: 100%;
+    }
+
+
+    header nav a {
+        font-size: 12px;
+        margin-right: 2px;
+
+    }
+
+    header nav li {
+        padding: 0 2px 0 2px;
+    }
+
+    header #logo img {
+        height: auto;
+        width: 50px;
+    }
+
+    header nav img {
+        width: 15px;
+    }
+    #boxes{
+        display: table-row;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+    }
+
+    #boxes .box2 {
+        margin-top: 2%;
+        margin-left: 4%;
+        margin-right: 10px;
+        font-size: 16px;
+        text-align: left;
+        background: #c4c3c3;
+        height: auto;
+    }
+
+    #boxes .box {
+        margin-top: 2%;
+        margin-left: 4%;
+        font-size: 16px;
+        text-align: left;
+        height: auto;
+    }
+
+    #boxes .box1{
+        margin-top: 2%;
+        margin-left: 4%;
+        font-size: 16px;
+        text-align: left;
+        height: auto;
+    }
+
+    footer {
+
+        padding: 0;
+        margin-top: 2%;
+        height: 3%;
+    }
+
+    footer a {
+        font-size: 12px;
+
+    }
+}
+
+@media only screen and (min-device-width: 100px)and (max-width: 600px) {
+    
+    .container{
+        width: 99%;
+    }
+
+    header {
+        margin-bottom: 10px;
+        padding-top: 2px;
+        padding-left: 2px;
+        padding-right: 0px;
+        height: 10%;
+    }
+
+
+    header nav a {
+        font-size: 12px;
+        height: auto;
+
+    }
+
+    header nav li {
+        padding: 0 2px 0 2px;
+    }
+    nav .menu-btn {
+        display: none;
+    }
+
+    header #logo img {
+        height: auto;
+        width: 50px;
+    }
+
+    header nav img {
+        width: 15px;
+    }
+
+    #boxes{
+        display: table-row;
+        flex-direction: column;
+        height: 80%;
+        width: 90%;
+    }
+
+    #boxes .box2 {
+        width: 80%;
+        margin-top: 2%;
+        margin-left: 4%;
+        font-size: 16px;
+        text-align: left;
+        background: #c4c3c3;
+        height: auto;
+    }
+
+    #boxes .box {
+        width: 80%;
+        margin-top: 2%;
+        margin-left: 4%;
+        font-size: 16px;
+        text-align: left;
+        height: auto;
+    }
+
+    #boxes .box1{
+        width: 80%;
+        margin-top: 2%;
+        margin-left: 4%;
+        font-size: 16px;
+        text-align: left;
+        height: auto;
+    }
+
+    footer {
+
+        padding: 0;
+        margin-top: 10px;
+        height: 3%;
+    }
+
+    footer a {
+        font-size: 12px;
+
+    }
+}
+
+@media screen and (min-device-width : 426px) and (max-device-width : 600px){
+    .container{
+        width: 99%;
+    }
+
+
+    header {
+        margin-bottom: 20px;
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-right: 0px;
+        height: 10%;
+    }
+
+    header nav a {
+        font-size: 12px;
+        margin-right: 2px;
+
+    }
+
+    header nav li {
+        padding: 0 4px 0 4px;
+    }
+
+    header #logo img {
+        height: auto;
+        width: 50px;
+    }
+
+    header nav img {
+        width: 15px;
+    }
+    #boxes{
+        display: table-row;
+        height: auto;
+        width: auto;
+    }
+
+    #boxes .box2 {
+        width: 95%;
+        margin-top: 2%;
+        margin-left: 4%;
+        font-size: 16px;
+        text-align: left;
+        background: #c4c3c3;
+        height: auto;
+    }
+
+    #boxes .box {
+        width: 95%;
+        margin-top: 2%;
+        margin-left: 4%;
+        font-size: 16px;
+        text-align: left;
+        height: auto;
+
+    }
+
+    #boxes .box1{
+        width: 95%;
+        margin-top: 2%;
+        margin-left: 4%;
+        font-size: 16px;
+        text-align: left;
+        height: auto;
+    }
+
+    footer {
+
+        padding: 0;
+        margin-top: 2%;
+        height: 3%;
+    }
+
+    footer a {
+        font-size: 12px;
+
+    }
+}
