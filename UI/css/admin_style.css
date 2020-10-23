@@ -201,8 +201,7 @@ footer li {
         .quote .require {
         width: 95%;
         }
-        
-        /* Clear floats after the columns */
+
         .quote:after {
         content: "";
         display: table;
@@ -251,7 +250,7 @@ footer li {
         padding-left: 5px;
         padding-right: 0px;
         height: 15%;
-        /*margin-right: auto;*/
+
     }
     header nav a {
         font-size: 12px;
@@ -285,7 +284,6 @@ footer li {
         margin-top: 6px;
         }
         
-        /* Clear floats after the columns */
         .quote:after {
         content: "";
         display: table;
