@@ -157,7 +157,6 @@ footer {
 
     position: fixed;
     bottom: 0%;
-
     background: #739FE1;
     text-align: left;
     width: 100%;
@@ -209,9 +208,27 @@ footer a {
         margin-top: 60px;
     }
 
+    .content .page-title {
+        font-size: 28px;
+    }
+
     input[type=text], select {
         width: 80%;
+        font-size: 32px;
         height: 2vh;
+    }
+
+    textarea {
+        font-size: 32px;
+    }
+
+    .content button {
+        font-size: 32px;
+        padding: 20px 20px;
+    }
+
+    input[type=file] {
+        font-size: 28px;
     }
     
       
@@ -233,17 +250,15 @@ footer a {
       }
     
     footer {
-
-        padding: 0;
         margin-top: 2%;
-        height: 3%;
+        height: 2%;
     }
     footer li {
         margin-top: 10px;
     }
 
     footer a {
-        font-size: 12px;
+        font-size: 16px;
     }
 }
 
