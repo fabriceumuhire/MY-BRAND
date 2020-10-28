@@ -55,16 +55,21 @@ nav a:hover{
     color: teal;
 }
 
+article#main-col .page-title {
+    font-size: 24px;
+    font-weight: bolder;
+    margin-left: 60px;
+}
 article .button {
     background-color: #739FE1;
-    color: #FFFFFF;
     text-decoration: none;
     padding: 8px 10px;
-    margin-left: 60px;
+    margin-right: 40px;
+    margin-top: -60px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    float: left;
+    float: right;
 }
 
 article .button .quote:after {
@@ -79,7 +84,6 @@ article .button .quote:after {
     flex-direction: row;
     justify-content: space-around;
     flex-flow: wrap;
-    margin-top: 80px;
 }
 
 .card {
@@ -108,6 +112,12 @@ article .button .quote:after {
     background: #fafafa;
     border-right: 2px solid #739FE1;
     border-left: 2px solid #739FE1;
+}
+.card__content p{
+    max-width: 20ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .card__content > p:first-of-type {
@@ -164,6 +174,7 @@ footer li {
     float: left;
     display: inline;
     margin-left: 0px;
+    margin-top: -10px;
     padding: 0 10px 0 10px;
 }
 
@@ -216,17 +227,24 @@ footer a {
 
     article .button {
         font-size: 28px;
+        margin-top: -80px;
+        margin-left: 50px;
+    }
+
+    article#main-col .page-title {
+        font-size: 38px;
+        margin-top: 60px;
     }
     .card{
         width: 85%;
-        margin-left: 2.5%;
+        margin-left: 1%;
         margin-top: 25px;
     }
     .card__image {
         width: 99.5%;
     }
     .card__content {
-        font-size: 12px;
+        font-size: 38px;
     }
     .card__info {
         font-size: 20px;
@@ -272,7 +290,7 @@ footer a {
         width: 99.5%;
     }
     .card__content {
-        font-size: 16px;
+        font-size: 20px;
     }
     .card__info {
         font-size: 16px;
@@ -286,7 +304,7 @@ footer a {
     }
 
     header nav a {
-        font-size: 12px;
+        font-size: 18px;
         margin-right: auto;
 
     }

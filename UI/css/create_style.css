@@ -196,30 +196,28 @@ footer a {
 
     header #logo img {
         height: auto;
-        width: 50px;
+        width: 8%;
     }
 
     header nav img {
         width: 15px;
     }
 
+    .admin-content {
+        width: 85%;
+    }
+
+    form {
+        width: 98%;
+    }
     .content {
-        margin-left: 50px;
+        width: 100%;
+        margin-left: 20px;
         margin-top: 60px;
     }
 
     .content .page-title {
-        font-size: 28px;
-    }
-
-    input[type=text], select {
-        width: 80%;
-        font-size: 32px;
-        height: 2vh;
-    }
-
-    textarea {
-        font-size: 32px;
+        font-size: 48px;
     }
 
     .content button {
@@ -228,20 +226,24 @@ footer a {
     }
 
     input[type=file] {
-        font-size: 28px;
+        font-size: 32px;
     }
-    
-      
-      /* Clear floats after the columns */
       .quote:after {
         content: "";
         display: table;
         clear: both;
       }
       
-      input[type=text], select, textarea {
+      input[type=text], select {
         width: 100%;
+        font-size: 32px;
         resize: vertical;
+      }
+
+      textarea {
+          width: 100%;
+          height: 50vh;
+          font-size: 34px;
       }
       
       input[type=submit] {
@@ -258,7 +260,7 @@ footer a {
     }
 
     footer a {
-        font-size: 16px;
+        font-size: 24px;
     }
 }
 
@@ -340,7 +342,7 @@ footer a {
 
 
     header nav a {
-        font-size: 12px;
+        font-size: 16px;
         margin-right: auto;
 
     }
@@ -364,10 +366,25 @@ footer a {
         margin-top: 60px;
     }
 
+    .content button {
+        font-size: 32px;
+    }
+
+    input[type=file] {
+        font-size: 32px;
+    }
     input[type=text], select {
         width: 100%;
-        height: 2vh;
-    }
+        font-size: 28px;
+        resize: vertical;
+      }
+
+      textarea {
+          width: 100%;
+          height: 50vh;
+          font-size: 28px;
+      }
+
 
     footer {
 
