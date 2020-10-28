@@ -9,11 +9,16 @@ body {
 }
 header {
     background: #739FE1;
-    height: 60px;
 }
 header .menu-btn {
     display: none;
-    }
+}
+
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
 
 .logo {
     float: left;
@@ -102,7 +107,7 @@ article#main-col{
 
 
 
-  footer {
+footer {
     position: fixed;
     bottom: 0%;
     padding: 1px;
@@ -150,10 +155,22 @@ footer a {
     }
     article#main-col{
         width: 90%;
-        font-size: medium;
+        font-size: 28px;
         margin-left: 40px;
     }
 
+    input[type=email], select {
+       font-size: 28px;
+      }
+    
+      input[type=text], textarea {
+        font-size: 28px;
+      }
+    .button_1 {
+        font-size: 38px;
+        height: 48px;
+        width: 120px;
+    }
     .quote {
         padding-bottom: 80px;
     }
