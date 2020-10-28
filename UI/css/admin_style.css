@@ -79,7 +79,6 @@ section .box{
 
 #darkgray{
     padding: 15px;
-    margin-left: 20px;
     margin-top: 0px;
     background: #7e7979;
     border: 0;
@@ -157,7 +156,7 @@ footer li {
     padding: 0 10px 0 10px;
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 468px) {
+@media only screen and (max-device-width: 468px) {
 
     .container{
         width: 100%;
@@ -183,7 +182,15 @@ footer li {
     }
 
     section .box {
-        width: 60%;
+        width: 90%;
+    }
+
+    section .main {
+        width: 95%;
+    }
+
+    section h1 {
+        font-size: 36px;
     }
 
     .inputs {
@@ -210,24 +217,22 @@ footer li {
         
         input[type=email], select {
         width: 100%;
+        font-size: 32px;
         resize: vertical;
         }
-        
-        label {
-        padding: 12px 12px 12px 0;
-        display: inline-block;
+
+        input[type=password], select {
+            font-size: 32px;
         }
         
         input[type=submit] {
         width: auto;
         float: left;
         }
-
-    footer {
-
-        padding: 0;
-        height: 3%;
+    button {
+        font-size: 32px;
     }
+
     footer li {
         margin-top: 15px;
     }
@@ -343,6 +348,28 @@ footer li {
 
     section .box {
         width: 60%;
+    }
+
+    section h1 {
+        font-size: 28px;
+    }
+
+    input[type=email], select {
+        width: 100%;
+        font-size: 24px;
+        resize: vertical;
+        }
+
+        input[type=password], select {
+            font-size: 24px;
+        }
+        
+        input[type=submit] {
+        width: auto;
+        float: left;
+        }
+    button {
+        font-size: 20px;
     }
 
     footer {
