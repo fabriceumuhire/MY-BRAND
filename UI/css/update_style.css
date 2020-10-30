@@ -79,6 +79,14 @@ article#main-col{
     margin-left: 40px;
 }
 
+input[type=file] {
+    width: 80%;
+    margin-top: 15px;
+    padding-right: auto;
+    border-radius: 4px;
+    resize: vertical;
+}
+
 .quote:after {
     content: "";
     display: table;
@@ -94,7 +102,7 @@ article#main-col{
     border-radius: 4px;
     resize: vertical;
   }
-
+  
   footer {
     position: fixed;
     bottom: 0%;
@@ -143,13 +151,17 @@ footer li {
     article#main-col {
         width: 95%
     }
-
+    input[type=file] {
+        font-size: 32px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
     .page-title {
         font-size: 40px;
     }
 
     textarea {
-        width: 80%;
+        width: 70%;
         font-size: 20px;
     }
 
@@ -170,7 +182,7 @@ footer li {
     }
 
     footer a {
-        font-size: 12px;
+        font-size: 38px;
 
     }
 }

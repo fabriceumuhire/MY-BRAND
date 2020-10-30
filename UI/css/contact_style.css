@@ -195,22 +195,26 @@ footer li {
     }
     aside#main-col .page-title {
         margin-left: 20px;
+        font-size: 32px;
     }
     section .box{
         float: left;
         width: 90%;
         border: #F4F4F4;
         padding: 10px;
-        font-size: 18px;
+        font-size: 20px;
         text-align: left;
     }
    
+    .quote {
+        margin-bottom: 20px;
+    }
    section .queries{
        float: left;
-       width: 60%;
+       width: 90%;
        margin-left: 20px;
        margin-top: 40px;
-       font-size: 18px;
+       font-size: 26px;
    }
 
    section .queries p{
@@ -242,17 +246,25 @@ footer li {
       
       input[type=text], select, textarea {
         width: 100%;
+        font-size: 32px;
         resize: vertical;
       }
       
+      input[type=email], select{
+        width: 100%;
+        font-size: 32px;
+        resize: vertical;
+      }
+
       label {
         padding: 12px 12px 12px 0;
         display: inline-block;
       }
       
-      input[type=submit] {
-        width: auto;
+      button {
+        width: 180px;
         float: left;
+        font-size: 28px;
       }
     
     footer {
