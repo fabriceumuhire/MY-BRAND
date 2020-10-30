@@ -1,0 +1,487 @@
+body {
+    margin: 0;
+    font: 14px/1.5 Georgia, 'Times New Roman', Times, sans-serif;
+    color: black;
+    background: #f0f0f0;
+}
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background: #739FE1;
+}
+
+header .menu-btn {
+    display: none;
+}
+
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.logo {
+    float: left;
+    width: 7%;
+}
+
+nav {
+    float: right;
+    
+}
+
+nav ul {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline;
+    margin-left: 0px;
+    padding-top: 40px;
+    padding-right: 20px;
+}
+
+nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+nav a:hover{
+    color: teal;
+}
+.wrapper{
+    width: 95%;
+    height: auto;
+    position: absolute;
+    margin-top: 40px;
+    margin-left: 40px;
+    margin-bottom: 60px;
+    display: flex;
+ }
+ 
+ .wrapper .profile{
+    width: 40%;
+    margin-right: 25px;
+ }
+ 
+ .wrapper .profile .profile_img_info{
+    display: flex;
+    background: #C5C5C5;
+    border-radius: 10px;
+    margin-bottom: 25px;
+ }
+ 
+ .wrapper .profile .profile_img_info .info{
+     padding: 40px;
+ }
+ 
+ .wrapper .profile .profile_img_info .info p.name{
+   font-size: 24px;
+   font-weight: bolder;
+ }
+
+ .wrapper .profile .profile_img_info .info p.email{
+     font-size: 18px;
+ }
+ 
+ .wrapper .profile .profile_img_info p.place{
+     font-weight: 300;
+ }
+ 
+ .wrapper .profile .profile_skills{
+   background: #C5C5C5;
+   border-radius: 10px;
+   padding: 25px;
+ }
+ 
+ .wrapper .profile .profile_skills .skills{
+   padding-bottom: 20px;
+   border-bottom: 1px solid #cccccc;
+ }
+ 
+ .wrapper .profile .profile_skills .skills p{
+   text-transform: uppercase;
+   font-weight: 700;
+   font-size: 18px;
+   margin-bottom: 10px;
+ }
+ 
+ .wrapper .profile .profile_skills .skills ul li{
+   font-size: 24px;
+   margin-bottom: 5px;
+ }
+ 
+ .wrapper .profile .profile_skills .skills ul li .fab{
+   width: 40px;
+ }
+ 
+ .wrapper .profile .profile_skills .tags_wrap{
+   padding-top: 20px;
+ }
+ 
+ .wrapper .profile .profile_skills .tags_wrap span.tag{
+   background: #e4e9ef;
+   padding: 10px 15px;
+   display: inline-block;
+   border-radius: 10px;
+   margin: 5px;
+   font-size: 14px;
+ }
+ .wrapper .profile_expr{
+    background: #C5C5C5;
+    border-radius: 10px;
+    margin-right: 25px;
+    padding: 25px;
+    width: 48%;
+  }
+
+  .wrapper .profile_expr .expr p.title{
+      font-size: 24px;
+      font-weight: bolder;
+  }
+  .wrapper .profile_expr .expr ul li{
+      font-size: 18px;
+  }
+  .wrapper .profile_expr .expr{
+  border-bottom: 2px solid #929292;
+}
+
+.wrapper .profile_expr .expr:first-child{
+    padding-top: 0px;
+  }
+.wrapper .profile_expr .expr:last-child{
+    border-bottom: 0px;
+  }
+ .wrapper .profile_counts{
+   background: #C5C5C5;
+   border-radius: 10px;
+   padding: 25px;
+   width: 12%;
+ }
+ 
+ .wrapper .profile_counts .profile_counts_wrap{
+   padding: 30px 0;
+   border-bottom: 1px solid #929292;
+ }
+ .wrapper .profile_counts .profile_counts_wrap:first-child{
+   padding-top: 0;
+ }
+ .wrapper .profile_counts .profile_counts_wrap:last-child{
+   padding-bottom: 0px;
+   border-bottom: 0px;
+ }
+ 
+ .wrapper .profile_counts .profile_counts_wrap .item{
+     padding: 20px 10px;
+     text-align: center;
+     border-radius: 10px;
+     cursor: pointer;
+     transition: all .2s ease;
+ }
+ .wrapper .profile_counts .profile_counts_wrap .title a{
+     text-decoration: none;
+     color: black;
+ }
+ 
+ .wrapper .profile_counts .profile_counts_wrap .item:hover{
+   background: #e4e9ef;
+ }
+ 
+ .wrapper .profile_counts .profile_counts_wrap .item .fas{
+   font-size: 30px;
+   margin-bottom: 20px;
+ }
+ 
+ .wrapper .profile_counts .profile_counts_wrap .item .title{
+   font-size: 14px;
+ }
+
+footer {
+    position: fixed;
+    bottom: 0%;
+    background: #739FE1;
+    text-align: left;
+    width: 100%;
+    float: left;
+    height: 5%;
+}
+
+footer li {
+    float: left;
+    display: inline;
+    margin-left: 0px;
+    padding-left: 20px;
+}
+
+footer a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 12px;
+
+}
+
+@media screen and (min-device-width: 320px) and (max-device-width: 500px) {
+    
+    .container{
+        width: 100%;
+    }
+
+
+    header nav a {
+        font-size: 12px;
+        margin-right: 2px;
+
+    }
+
+    header nav li {
+        padding: 0 2px 0 2px;
+    }
+
+    header #logo img {
+        height: auto;
+        width: 50px;
+    }
+
+    header nav img {
+        width: 15px;
+    }
+    .wrapper{
+        display: table-row;
+        align-items: center;
+        justify-content: center;
+        width: 95%;
+    }
+
+    .wrapper .profile{
+        width: 95%;
+        margin-bottom: 25px;
+     }
+
+     .wrapper .profile .profile_img_info .info p.name{
+        font-size: 34px;
+        font-weight: bolder;
+      }
+     
+      .wrapper .profile .profile_img_info .info p.email{
+          font-size: 36px;
+      }
+      
+      .wrapper .profile .profile_img_info p.place{
+          font-size: 32px;
+      }
+     .wrapper .profile .profile_skills .skills p{
+        font-size: 38px;
+      }
+      
+      .wrapper .profile .profile_skills .skills ul li{
+        font-size: 36px;
+      }
+
+     .wrapper .profile .profile_skills .tags_wrap span.tag{
+         font-size: 28px;
+     }
+
+     .wrapper .profile_expr{
+         width: 90%;
+         margin-bottom: 25px;
+     }
+     .wrapper .profile_expr .expr p.title{
+        font-size: 32px;
+    }
+    .wrapper .profile_expr .expr ul li{
+        font-size: 32px;
+    }
+
+     .wrapper .profile_counts{
+         width: 90%;
+         display: flex;
+         flex-direction: row;
+     }
+     
+     .wrapper .profile_counts .profile_counts_wrap{
+        padding: 0 50px;
+        border-right: 2px solid #929292;
+        border-bottom: 0px;
+      }
+      
+      .wrapper .profile_counts .profile_counts_wrap .item{
+          padding: 20px 20px;
+          text-align: center;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: all .2s ease;
+      }
+
+      .wrapper .profile_counts .profile_counts_wrap .item .fas{
+        font-size: 38px;
+        margin-bottom: 0px;
+      }
+
+      .wrapper .profile_counts .profile_counts_wrap:last-child{
+        border-right: 0px;
+      }
+
+      .wrapper .profile_counts .profile_counts_wrap .item .title{
+        font-size: 28px;
+      }
+    footer {
+
+        padding: 0;
+        margin-top: 2%;
+        height: 3%;
+    }
+
+    footer a {
+        font-size: 16px;
+
+    }
+}
+
+@media screen and (max-width: 900px) {
+    
+    .container{
+        width: 99%;
+    }
+
+    header {
+        margin-bottom: 10px;
+        padding-top: 2px;
+        padding-left: 2px;
+        padding-right: 0px;
+        height: 10%;
+    }
+
+
+    header nav a {
+        font-size: 12px;
+        height: auto;
+
+    }
+
+    header nav li {
+        padding: 0 2px 0 2px;
+    }
+    nav .menu-btn {
+        display: none;
+    }
+
+    header #logo img {
+        height: auto;
+        width: 50px;
+    }
+
+    header nav img {
+        width: 15px;
+    }
+
+    .wrapper{
+        display: table-row;
+        align-items: center;
+        justify-content: center;
+        width: 95%;
+    }
+
+    .wrapper .profile{
+        width: 95%;
+        margin-bottom: 25px;
+     }
+
+     .wrapper .profile_expr{
+         width: 90%;
+         margin-bottom: 25px;
+     }
+
+     .wrapper .profile_counts{
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .wrapper .profile_counts .profile_counts_wrap{
+       padding: 0 50px;
+       border-right: 2px solid #929292;
+       border-bottom: 0px;
+     }
+     
+     .wrapper .profile_counts .profile_counts_wrap .item{
+         padding: 20px 20px;
+         text-align: center;
+         border-radius: 10px;
+         cursor: pointer;
+         transition: all .2s ease;
+     }
+
+     .wrapper .profile_counts .profile_counts_wrap .item .fas{
+       font-size: 30px;
+       margin-bottom: 0px;
+     }
+
+     .wrapper .profile_counts .profile_counts_wrap:last-child{
+       border-right: 0px;
+     }
+    footer {
+
+        padding: 0;
+        margin-top: 10px;
+        height: 3%;
+    }
+
+    footer a {
+        font-size: 16px;
+
+    }
+}
+
+@media screen and (min-device-width : 501px) and (max-device-width : 726px){
+    .container{
+        width: 99%;
+    }
+
+
+    header {
+        margin-bottom: 20px;
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-right: 0px;
+        height: 10%;
+    }
+
+    header nav a {
+        font-size: 12px;
+        margin-right: 2px;
+
+    }
+
+    header nav li {
+        padding: 0 4px 0 4px;
+    }
+
+    header #logo img {
+        height: auto;
+        width: 50px;
+    }
+
+    header nav img {
+        width: 15px;
+    }
+
+    
+    footer {
+
+        padding: 0;
+        margin-top: 2%;
+        height: 3%;
+    }
+
+    footer a {
+        font-size: 6px;
+
+    }
+}
