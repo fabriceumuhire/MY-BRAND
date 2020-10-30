@@ -162,7 +162,7 @@ footer {
 footer a {
     color: #000000;
     text-decoration: none;
-    font-size: 12px;
+    font-size: 16px;
 }
 footer li {
     display: inline-block;
@@ -212,6 +212,10 @@ footer li {
        margin-top: 40px;
        font-size: 18px;
    }
+
+   section .queries p{
+    margin-left: 20px;
+}
     
     .inputs {
         float: center;
@@ -259,7 +263,7 @@ footer li {
     }
 
     footer a {
-        font-size: 12px;
+        font-size: 38px;
 
     }
 }
@@ -334,7 +338,7 @@ footer li {
     }
 
     footer a {
-        font-size: 12px;
+        font-size: 20px;
 
     }
 }
