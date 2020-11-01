@@ -7,6 +7,10 @@
         <title> Tech U | Login</title>
         <link rel="stylesheet" href="./css/admin_style.css">
         <link rel="stylesheet" href="./css/menu_contact.css">
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+
     </head>
     <body>
         <header>
@@ -29,25 +33,27 @@
             <h1>Login to TechU</h1>
             <div class="box">
                 <div id="darkgray">
-                    <form action="./admin_blog.html">
-                            <div class="quote">
-                                <div class="require">
-                                    <input type="email" name="email" id="email" placeholder="Your Email" required>
-                                </div>
+                    <form>
+                        <div class="quote">
+                            <div class="require">
+                                <input type="email" name="email" id="email" placeholder="Your Email" required>
                             </div>
-                            <div class="quote">
-                                <div class="require">
-                                    <input type="password" name="password" id="password" placeholder="Your Password">
-                                </div>
+                        </div>
+                        <div class="quote">
+                            <div class="require">
+                                <input type="password" name="password" id="password" placeholder="Your Password">
                             </div>
-                            <br>
-                            <div class="quote">
-                                <button id="submit">Submit</button>
-                            </div>
+                        </div>
+                        <br>
+                        <div class="quote">
+                            <button id="submit" onclick="validate()">Submit</button>
+                        </div>
                     </form>
                 </div>
             </div>
         </section>
+        <script src="./js/app.js"></script>
+        <script src="./js/login.js"></script>
     </body>
     <footer>
         <div class="container">
