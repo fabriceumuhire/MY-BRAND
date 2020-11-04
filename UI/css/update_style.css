@@ -4,45 +4,43 @@ body {
     background: #f0f0f0;
 }
 .container {
-    width: 99%;
+    width: 100%;
     margin: 0 auto;
 }
-
 header {
     background: #739FE1;
 }
-
 header .menu-btn {
     display: none;
 }
-
 header::after {
     content: '';
     display: table;
     clear: both;
 }
-
 .logo {
     float: left;
-    width: 7%;
+    margin-left: 20px;
+    width: 6%;
+    margin-top: 0%;
 }
 
 nav {
     float: right;
-    
 }
 
 nav ul {
     margin-top: 20px;
     padding: 0;
+    overflow: hidden;
     list-style: none;
 }
 
 nav li {
     display: inline;
     margin-left: 0px;
-    padding-top: 40px;
-    padding-right: 20px;
+    padding-top: 10px;
+    padding-right: 10px;
 }
 
 nav a {
@@ -54,30 +52,58 @@ nav a {
 
 nav a:hover{
     color: teal;
-    font-weight: bold;
-} 
-
-.contain{
-    width: 100%;
-    margin: 2px;
 }
 
-aside#sidebar {
-    float: left;
-    width: 60%;
-    margin-top: 40px;
-    margin-right: 20px;
-    font-size: large;
-    font-weight: bolder;
+button {
+    padding-bottom: 20px;
+    margin-bottom: 80px;
+}
+
+form {
+    margin: 20px 0;
+}
+
+.button_1{
+    height: 30px;
+    width: 80px;
+    padding-top: 5px;
+    background: #739FE1;
+    border-radius: 10%;
+    color: #FFFFFF;
 }
 
 article#main-col{
     float: left;
-    width: 70%;
-    font-size: larger;
-    margin-left: 20px;
+    width: 80%;
+    font-size: large;
+    margin-left: 40px;
 }
-footer {
+
+input[type=file] {
+    width: 80%;
+    margin-top: 15px;
+    padding-right: auto;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.quote:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  textarea {
+    width: 70%;
+    height: 30vh;
+    padding: 15px;
+    padding-right: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  footer {
     position: fixed;
     bottom: 0%;
     background: #739FE1;
@@ -87,18 +113,14 @@ footer {
     height: 5%;
 }
 
-footer li {
-    float: left;
-    display: inline;
-    margin-left: 0px;
-    padding-left: 20px;
-}
-
 footer a {
     color: #000000;
     text-decoration: none;
     font-size: 12px;
-
+}
+footer li {
+    display: inline-block;
+    padding: 0 10px 0 10px;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 425px) {
@@ -122,109 +144,62 @@ footer a {
         width: 50px;
     }
 
+    .main {
+        margin-left: 50px;
+    }
+
+    article#main-col {
+        width: 95%
+    }
+    input[type=file] {
+        font-size: 32px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .page-title {
+        font-size: 40px;
+    }
+
+    textarea {
+        width: 70%;
+        font-size: 20px;
+    }
+
+    .button_1{
+        height: 50px;
+        width: 160px;
+        font-size: 32px;
+    }
     header nav img {
         width: 15px;
     }
 
-    .contain{
-        margin-top: 20px;
-        margin-left: 20px;
-        width: 95%;
-    }
-
-    article#main-col{
-        display: table-row;
-        float: left;
-        width: 95%;
-        margin-top: 20px;
-        margin-left: 15px;
-    }
-    aside#sidebar {
-        float: left;
-        width: 90%;
-        font-size: 32px;
-        margin-top: 30px;
-        margin-left: 15px;
-    }
-
     footer {
 
+        padding: 0;
         margin-top: 2%;
         height: 3%;
     }
 
     footer a {
-        font-size: 12px;
+        font-size: 38px;
 
     }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1080px) {
     
     .container{
         width: 100%;
     }
 
-
-    header {
-        padding-top: 5px;
-        padding-left: 5px;
-        padding-right: 0px;
-        height: 15%;
-        /*margin-right: auto;*/
-    }
     header nav a {
         font-size: 12px;
-        margin-right: auto;
-
-    }
-
-    header nav li {
-        padding: 0 4px 0 4px;
-    }
-
-    header #logo img {
         height: auto;
-        width: 50px;
-        margin-left: -200px;
-    }
-
-    header nav img {
-        width: 15px;
-    }
-
-    footer {
-        margin-top: 2%;
-        height: 3%;
-    }
-
-    footer a {
-        font-size: 12px;
-    }
-}
-
-@media only screen and (min-device-width : 426px) and (max-device-width : 768px){
-    .container{
-        width: 99%;
-    }
-
-
-    header {
-        padding-top: 5px;
-        padding-left: 5px;
-        padding-right: 0px;
-        height: 10%;
-    }
-
-
-    header nav a {
-        font-size: 12px;
-        margin-right: auto;
 
     }
 
     header nav li {
-        
         padding: 0 2px 0 2px;
     }
 
@@ -236,22 +211,70 @@ footer a {
     header nav img {
         width: 15px;
     }
-    article#main-col{
-        width: 90%;
-        margin-left: 15px;
+
+    .main {
+        margin-left: 50px;
     }
-    aside#sidebar {
-        width: 85%;
-        margin-top: 30px;
-        margin-left: 15px;
-        font-size: 20px;
+
+    textarea {
+        width: 95%;
     }
+
     footer {
+
+        padding: 0;
+        margin-top: 2%;
+        height: 5%;
+    }
+
+    footer a {
+        font-size: 12px;
+
+    }
+}
+
+@media only screen and (min-device-width : 426px) and (max-device-width : 768px){
+    .container{
+        width: 100%;
+    }
+
+    header nav a {
+        font-size: 16px;
+        margin-right: 2px;
+
+    }
+
+    header nav li {
+        padding: 0 4px 0 4px;
+    }
+
+    header #logo img {
+        height: auto;
+        width: 50px;
+    }
+
+    header nav img {
+        width: 15px;
+    }
+
+    .main {
+        margin-left: 50px;
+    }
+
+    textarea {
+        width: 95%;
+        font-size: 24px;
+    }
+
+    footer {
+
+        padding: 0;
         margin-top: 2%;
         height: 3%;
     }
 
     footer a {
         font-size: 12px;
+
     }
 }

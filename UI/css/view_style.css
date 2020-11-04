@@ -4,16 +4,20 @@ body {
     background: #f0f0f0;
 }
 .container {
-    width: 99%;
+    width: 100%;
     margin: 0 auto;
 }
 header {
     background: #739FE1;
-    height: 60px;
 }
 header .menu-btn {
     display: none;
-    }
+}
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
 
 .logo {
     float: left;
@@ -51,7 +55,30 @@ nav a:hover{
     color: teal;
 }
 
+article#main-col .page-title {
+    font-size: 24px;
+    font-weight: bolder;
+    margin-left: 60px;
+}
+article .button {
+    background-color: #739FE1;
+    text-decoration: none;
+    padding: 8px 10px;
+    margin-right: 40px;
+    margin-top: -60px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
 
+article .button .quote:after {
+    content: "";
+    display: table;
+    clear: both;
+    text-decoration: none;
+    list-style: none;
+}
 .cards {
     display: flex;
     flex-direction: row;
@@ -85,6 +112,12 @@ nav a:hover{
     background: #fafafa;
     border-right: 2px solid #739FE1;
     border-left: 2px solid #739FE1;
+}
+.card__content p{
+    max-width: 25ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .card__content > p:first-of-type {
@@ -141,6 +174,7 @@ footer li {
     float: left;
     display: inline;
     margin-left: 0px;
+    margin-top: -10px;
     padding: 0 10px 0 10px;
 }
 
@@ -154,27 +188,69 @@ footer a {
     .card {
       width: 40%;
     }
+
+    .container {
+        width: 100%;
+    }
+    header {
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-right: 0px;
+        height: 15%;
+        /*margin-right: auto;*/
+    }
+    header nav a {
+        font-size: 12px;
+        margin-right: auto;
+
+    }
+
+    header nav li {
+        padding: 0 4px 0 4px;
+    }
+
+    header #logo img {
+        height: auto;
+        width: 50px;
+    }
+
+    header nav img {
+        width: 15px;
+    }
   }
 
-@media screen and (max-device-width : 425px){
+@media screen and (min-device-width: 320px) and (max-device-width: 425px) {
+    
     .container{
         width: 100%;
     }
+
+    article .button {
+        font-size: 28px;
+        margin-top: -80px;
+        margin-left: 50px;
+    }
+
+    article#main-col .page-title {
+        font-size: 38px;
+        margin-top: 60px;
+    }
     .card{
         width: 85%;
-        margin-left: 2.5%;
+        margin-left: 1%;
+        margin-top: 25px;
     }
     .card__image {
         width: 99.5%;
     }
     .card__content {
-        font-size: 12px;
+        font-size: 38px;
     }
     .card__info {
         font-size: 20px;
     }
     .card__link {
-        font-size: 20px;
+        font-size: 28px;
     }
 
     header nav a {
@@ -214,7 +290,7 @@ footer a {
         width: 99.5%;
     }
     .card__content {
-        font-size: 16px;
+        font-size: 20px;
     }
     .card__info {
         font-size: 16px;
@@ -223,8 +299,12 @@ footer a {
         font-size: 16px;
     }
 
+    header {
+        height: 15%;
+    }
+
     header nav a {
-        font-size: 12px;
+        font-size: 18px;
         margin-right: auto;
 
     }

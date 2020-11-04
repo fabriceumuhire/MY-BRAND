@@ -6,7 +6,7 @@ body {
 .container {
     width: 100%;
     margin: 0 auto;
-    
+
 }
 header {
     background: #739FE1;
@@ -61,95 +61,100 @@ li {
     font-size: bold;
 }
 
-#darkgray{
-    padding: 15px;
-    height: 100%;
-    width: 95%;
-    margin-left: 20px;
-    margin-top: 0px;
-    background: #7e7979;
-    border: 0;
-    border: 5px solid #739FE1;
-    border-radius: 10px;
+form {
+    width: 80%;
 }
 
-#main{
+.admin-content {
+    width: 85%;
+    height: 80%;
+    padding: 20px 60px
+}
+.content {
     width: 95%;
-     margin-top: 20px;
-     display: flex;
-     flex-wrap: wrap;
- }
-
-section .box{
-     float: right;
-     width: 45%;
-     margin-right: 4%;
-     border: #F4F4F4;
-     padding: 10px;
-     font-size: 16px;
-     text-align: left;
- }
-
-section .queries{
-    float: left;
-    width: 40%;
-    margin-left: 20px;
-    margin-top: 20px;
-    font-size: 16px;
+    height: 30%;
 }
 
- aside#main-col .page-title {
-     margin-bottom: 20px;
- }
 
- .inputs {
-    float: left;
-    width: 20%;
-    margin-top: 4px;
-  }
-  
-  .require {
-    float: left;
-    width: 90%;
-    margin-top: 4px;
-  }
-  
-  /* Clear floats after the columns */
-  .quote:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  input[type=email], select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: vertical;
-  }
+.admin-content .page-title {
+    text-align: left;
+    margin-bottom: 50px;
+    margin-top: 5px;
+}
 
-  input[type=text], textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: vertical;
-  }
-
-  button {
+.admin-content .button {
     background-color: #739FE1;
-    color: white;
-    padding: 12px 20px;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 8px 10px;
+    margin-left: 5px;
+    margin-top: 5px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     float: left;
+    list-style: none;
+}
+
+.admin-content .button .quote:after {
+    content: "";
+    display: table-column;
+    clear: both;
+    text-decoration: none;
+    list-style: none;
   }
 
+  .content button {
+    background-color: #739FE1;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 8px 10px;
+    margin-left: 0;
+    margin-top: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+    list-style: none;
+}
 
+.content button .quote:after {
+    content: "";
+    display: table-column;
+    clear: both;
+    text-decoration: none;
+    list-style: none;
+}
+input[type=text], select, textarea {
+    width: 80%;
+    height: 4vh;
+    padding: 5px;
+    padding-right: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+
+textarea {
+    width: 80%;
+    height: 35vh;
+    padding: 5px;
+    padding-right: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+
+  input[type=file] {
+    width: 80%;
+    margin-top: 15px;
+    padding-right: auto;
+    border-radius: 4px;
+    resize: vertical;
+  }
 
 footer {
+
     position: fixed;
     bottom: 0%;
     background: #739FE1;
@@ -159,14 +164,18 @@ footer {
     height: 5%;
 }
 
+footer li {
+    float: left;
+    display: inline;
+    margin-left: 0px;
+    padding: 0 10px 0 10px;
+}
+
 footer a {
     color: #000000;
     text-decoration: none;
     font-size: 12px;
-}
-footer li {
-    display: inline-block;
-    padding: 0 10px 0 10px;
+
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 468px) {
@@ -187,100 +196,75 @@ footer li {
 
     header #logo img {
         height: auto;
-        width: 50px;
+        width: 8%;
     }
 
     header nav img {
         width: 15px;
     }
-    aside#main-col .page-title {
+
+    .admin-content {
+        width: 85%;
+    }
+
+    form {
+        width: 98%;
+    }
+    .content {
+        width: 100%;
         margin-left: 20px;
+        margin-top: 60px;
+    }
+
+    .content .page-title {
+        font-size: 48px;
+    }
+
+    .content button {
+        font-size: 32px;
+        padding: 20px 20px;
+    }
+
+    input[type=file] {
         font-size: 32px;
     }
-    section .box{
-        float: left;
-        width: 90%;
-        border: #F4F4F4;
-        padding: 10px;
-        font-size: 20px;
-        text-align: left;
-    }
-   
-    .quote {
-        margin-bottom: 20px;
-    }
-   section .queries{
-       float: left;
-       width: 90%;
-       margin-left: 20px;
-       margin-top: 40px;
-       font-size: 26px;
-   }
-
-   section .queries p{
-    margin-left: 20px;
-}
-    
-    .inputs {
-        float: center;
-        width: 95%;
-        margin-top: 6px;
-
-      }
-      
-      .require {
-        float: left;
-        width: 95%;
-        margin-top: 6px;
-      }
-      .quote .require {
-        width: 95%;
-      }
-      
-      /* Clear floats after the columns */
       .quote:after {
         content: "";
         display: table;
         clear: both;
       }
       
-      input[type=text], select, textarea {
-        width: 100%;
-        font-size: 32px;
-        resize: vertical;
-      }
-      
-      input[type=email], select{
+      input[type=text], select {
         width: 100%;
         font-size: 32px;
         resize: vertical;
       }
 
-      label {
-        padding: 12px 12px 12px 0;
-        display: inline-block;
+      textarea {
+          width: 100%;
+          height: 30vh;
+          font-size: 34px;
       }
       
-      button {
-        width: 180px;
+      input[type=submit] {
+        width: auto;
         float: left;
-        font-size: 28px;
       }
     
     footer {
-
-        padding: 0;
         margin-top: 2%;
-        height: 3%;
+        height: 2%;
+    }
+    footer li {
+        margin-top: 10px;
     }
 
     footer a {
-        font-size: 12px;
-
+        font-size: 24px;
     }
 }
 
-@media screen and (min-width: 769px)  and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
     
     .container{
         width: 100%;
@@ -312,18 +296,9 @@ footer li {
     header nav img {
         width: 15px;
     }
-    section .box{
-        float: left;
-    }
     .inputs {
         float: left;
         width: 40%;
-        margin-top: 6px;
-      }
-      
-      .require {
-        float: left;
-        width: 90%;
         margin-top: 6px;
       }
       
@@ -338,10 +313,7 @@ footer li {
         width: 100%;
         resize: vertical;
       }
-      #darkgray{
-        height: auto;
-        width: 100%;
-        }
+
     footer {
 
         padding: 0;
@@ -370,7 +342,7 @@ footer li {
 
 
     header nav a {
-        font-size: 12px;
+        font-size: 16px;
         margin-right: auto;
 
     }
@@ -388,6 +360,31 @@ footer li {
     header nav img {
         width: 15px;
     }
+
+    .content {
+        margin-left: 50px;
+        margin-top: 60px;
+    }
+
+    .content button {
+        font-size: 32px;
+    }
+
+    input[type=file] {
+        font-size: 32px;
+    }
+    input[type=text], select {
+        width: 100%;
+        font-size: 28px;
+        resize: vertical;
+      }
+
+      textarea {
+          width: 100%;
+          height: 50vh;
+          font-size: 28px;
+      }
+
 
     footer {
 
