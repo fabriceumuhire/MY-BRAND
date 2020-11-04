@@ -74,7 +74,7 @@ li {
 }
 
 #main{
-    width: 95%;
+    width: 100%;
      margin-top: 20px;
      display: flex;
      flex-wrap: wrap;
@@ -169,6 +169,24 @@ footer li {
     padding: 0 10px 0 10px;
 }
 
+.alert {
+    text-align: center;
+    padding: 10px;
+    background: darkslateblue;
+    color: #f0f0f0;
+    margin-bottom: 10px;
+    display: none;
+}
+
+#error_message{
+    margin-bottom: 20px;
+    background: coral;
+    padding: 0px;
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.5s ease;
+  }
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 468px) {
     
     .container{
@@ -244,10 +262,15 @@ footer li {
         clear: both;
       }
       
-      input[type=text], select, textarea {
+      input[type=text], select{
         width: 100%;
         font-size: 32px;
         resize: vertical;
+      }
+
+      textarea{
+          font-size: 32px;
+          margin-bottom: -60px;
       }
       
       input[type=email], select{
@@ -265,6 +288,8 @@ footer li {
         width: 180px;
         float: left;
         font-size: 28px;
+        margin-top: 15px;
+        margin-bottom: 50px;
       }
     
     footer {
