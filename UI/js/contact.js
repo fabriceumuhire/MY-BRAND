@@ -1,10 +1,10 @@
 const query = document.querySelector("#queries");
-const dbRefKey = firebase.database().ref("queries").orderByKey();
+const dbRefKey = firebase.database().ref("queries").orderByValue();
 dbRefKey.once("value")
   .then((snapshot) => {
     snapshot.forEach((childSnapshot) => {
       let key = childSnapshot.key;
-      query.innerHTML += childSnapshot.val().email  + ": " + "<br>";
+      query.innerHTML += "<p style='font-weight:bold;'>" + childSnapshot.val().email  + ": " + "</p>";
       query.innerHTML += childSnapshot.val().message + "<br>" + "<hr>";
   });
 });
@@ -31,20 +31,24 @@ function getInputVal(id){
 function saveQuery(nameV,emailV,subjectV,messageV){
 
     if(nameV === '' || emailV === '' || subjectV === '' || messageV === ""){
-        alert("Field cannot be empty");
+        document.getElementById('message').style.display = "block";
+        document.getElementById('message').innerHTML = "Field cannot be blank";
     }
     else if(nameV.length < 5){
-        alert("Name should have at least 5 char.");
+        document.getElementById('message_name').style.display = "block";
+        document.getElementById('message_name').innerHTML = "Enter at least 5 char.";
     }
     else if(subjectV.length < 15){
-        alert("Subject should have at least 15 char.");
+        document.getElementById('message_subject').style.display = "block";
+        document.getElementById('message_subject').innerHTML = "Enter at least 15 char.";
     }
     else if(messageV.length < 50){
-        alert("Message should have at least 50 char.");
+        document.getElementById('message').style.display = "block";
+        document.getElementById('message').innerHTML = "Enter at least 50 char.";
     }
     else {
         let newQueryRef = dbRef.push();
-        newQueryRef.set({
+        newQueryRef.set({ 
             name: nameV,
             email: emailV,
             subject: subjectV,
