@@ -1,4 +1,6 @@
 const dbRef = firebase.database().ref("blogs");
+
+let counter = 0;
 document.getElementById("add_blog").addEventListener("submit", submitblog);
 
 function submitblog(e){
@@ -21,6 +23,7 @@ function submitblog(e){
            dbRef.push().set({
                  title: titleV,
                  body: bodyV,
+                 counter: 10000 - counter,
                  imageURL:downloadURL
            },function(error){
                if(error){
@@ -40,14 +43,39 @@ function delete_post(key){
     console.log("Post deleted")
 }
 
-// Getting p details
 
-const query = document.querySelector("#messages");
-const dbRefKey = firebase.database().ref("blogs").orderByKey();
+const query = document.querySelector("#blog");
+const dbRefBlog = firebase.database().ref("blogs").orderByKey();
+
+dbRefBlog.on("value", blogs => {
+    /* if(blogs.exists()){
+        let blogHTML = ""; */
+        blogs.forEach(singleBlog => {
+            let key = singleBlog.key;
+
+            query.innerHTML += singleBlog.val().body;
+            /* blogHTML += "<div class='card'>";
+                blogHTML += "<div> <img width = 500 height = 220 />";
+                    blogHTML += blogs.val.imageURL;
+                blogHTML += "</div>";
+                blogHTML += "<div style='text-align:justify'>";
+                    blogHTML += blogs.val().body;
+                blogHTML += "</div>";
+            blogHTML += "</div>"; */
+        });
+});
+
+
+
+
+
+
+
+/* 
 dbRefKey.once("value")
   .then((snapshot) => {
     snapshot.forEach((childSnapshot) => {
       let key = childSnapshot.key;
-      query.innerHTML += childSnapshot.val().title;
+      query.innerHTML += "<p>" + childSnapshot.val().title;
   });
-});
+}); */
