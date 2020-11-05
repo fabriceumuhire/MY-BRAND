@@ -1,11 +1,13 @@
 const query = document.querySelector("#queries");
-const dbRefKey = firebase.database().ref("queries").orderByValue();
-dbRefKey.once("value")
-  .then((snapshot) => {
+let counter = 0;
+const dbRefKey = firebase.database().ref("queries").orderByChild('counter');
+dbRefKey.on("value", snapshot => {
     snapshot.forEach((childSnapshot) => {
-      let key = childSnapshot.key;
-      query.innerHTML += "<p style='font-weight:bold;'>" + childSnapshot.val().email  + ": " + "</p>";
-      query.innerHTML += childSnapshot.val().message + "<br>" + "<hr>";
+
+        counter++;
+        let key = childSnapshot.key;
+        query.innerHTML += "<p style='font-weight:bold;'>" + childSnapshot.val().email  + ": " + "</p>";
+        query.innerHTML += childSnapshot.val().message + "<br>" + "<hr>";
   });
 });
 
@@ -19,7 +21,7 @@ function submitform(e){
     const subjectV = getInputVal("subject");
     const messageV = getInputVal("message");
 
-    saveQuery(nameV,emailV,subjectV,messageV);
+    saveQuery(counter, nameV,emailV,subjectV,messageV);
 
     document.getElementById("add_enquiry").reset();
 }
@@ -28,7 +30,7 @@ function getInputVal(id){
     return document.getElementById(id).value;
 }
 
-function saveQuery(nameV,emailV,subjectV,messageV){
+function saveQuery(counter,nameV,emailV,subjectV,messageV){
 
     if(nameV === '' || emailV === '' || subjectV === '' || messageV === ""){
         document.getElementById('message').style.display = "block";
@@ -49,6 +51,7 @@ function saveQuery(nameV,emailV,subjectV,messageV){
     else {
         let newQueryRef = dbRef.push();
         newQueryRef.set({ 
+            counter: 10000 - counter,
             name: nameV,
             email: emailV,
             subject: subjectV,
