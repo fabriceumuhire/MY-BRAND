@@ -11,16 +11,20 @@ document.querySelector('#submit').addEventListener('click', (e) => {
     })
     .catch((error) => {
       if (error.code === "auth/invalid-email"){
-          window.alert("Email not found");
+        document.getElementById('message').style.display = "block";
+        document.getElementById('message').innerHTML = "Email not found";
       }
       if (error.code === "auth/user-not-found"){
-          window.alert("Enter correct email");
+        document.getElementById('message').style.display = "block";
+        document.getElementById('message').innerHTML = "Enter correct email";
       }
       if (error.code === "auth/wrong-password"){
-        window.alert("Wrong Password");
+        document.getElementById('message').style.display = "block";
+        document.getElementById('message').innerHTML = "Wrong Password";
         }
       if (error.code === "auth/network-request-failed"){
-          window.alert("Please try again")
+        document.getElementById('message').style.display = "block";
+        document.getElementById('message').innerHTML = "Please try again";
       }
         });
     });
