@@ -8,6 +8,8 @@
         <link rel="stylesheet" href="./css/view_style.css">
         <link rel="stylesheet" href="./css/menu_blog.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
     </head>
     <body>
         <header>
@@ -42,8 +44,7 @@
             <div class="card">
                 <img class="card__image" src="./img/review6.jpg" alt="">
                 <div class="card__content">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ducimus id ab tenetur delectus reiciendis fugit autem qui at
+                    <p id="messages">
                     </p>
                 </div>
                 <div class="card__info">
@@ -61,73 +62,8 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="card">
-                <img class="card__image" src="./img/review2.jpg" alt="">
-                <div class="card__content">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ducimus id ab tenetur delectus reiciendis fugit autem qui at
-                    </p>
-                </div>
-                <div class="card__info">
-                    <div>
-                        <i class="material-icons">thumb_up</i>
-                    </div>
-                    <div>
-                        <a href="./update_blog.html" class="card__link">Update</a>
-                    </div>
-                    <div>
-                        <a href="./delete_article.html" class="card__link">Delete</a>
-                    </div>
-                    <div>
-                        <a href="./view_article.html" class="card__link">View Article</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card__image" src="./img/review3.jpg" alt="">
-                <div class="card__content">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ducimus id ab tenetur delectus reiciendis fugit autem qui at
-                    </p>
-                </div>
-                <div class="card__info">
-                    <div>
-                        <i class="material-icons">thumb_up</i>
-                    </div>
-                    <div>
-                        <a href="./update_blog.html" class="card__link">Update</a>
-                    </div>
-                    <div>
-                        <a href="./delete_article.html" class="card__link">Delete</a>
-                    </div>
-                    <div>
-                        <a href="./view_article.html" class="card__link">View Article</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card__image" src="./img/review5.jpg" alt="">
-                <div class="card__content">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ducimus id ab tenetur delectus reiciendis fugit autem qui at
-                    </p>
-                </div>
-                <div class="card__info">
-                    <div>
-                        <i class="material-icons">thumb_up</i>
-                    </div>
-                    <div>
-                        <a href="./update_blog.html" class="card__link">Update</a>
-                    </div>
-                    <div>
-                        <a href="./delete_article.html" class="card__link">Delete</a>
-                    </div>
-                    <div>
-                        <a href="./view_article.html" class="card__link">View Article</a>
-                    </div>
-                </div>
-            </div>
+            <script src="./js/app.js"></script>
+            <script src="./js/blog.js"></script>
         </section>
     </body>
     <footer>

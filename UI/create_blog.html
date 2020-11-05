@@ -7,6 +7,9 @@
         <title> Tech U | Create</title>
         <link rel="stylesheet" href="./css/create_style.css">
         <link rel="stylesheet" href="./css/menu_contact.css">
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
         <meta>
     </head>
     <body>
@@ -31,7 +34,7 @@
             <div class="admin-content">
                 <div class="content">
                     <h2 class="page-title">Create a Blog</h2>
-                    <form>
+                    <form id="add_blog">
                         <div>
                             <input type="text" name="title" id="title" placeholder="Blog Title">
                         </div><br>
@@ -42,13 +45,15 @@
                             <input type="file" id="myFile" name="filename">
                         </div>
                         <div class="quote">
-                            <button type="submit">Submit</button>
+                            <button type="submit" onclick="upload()">Submit</button>
                         </div>
                     </form>
                 </div>
             </div>
         </section>
         <script src="https://cdn.ckeditor.com/ckeditor5/21.0.0/classic/ckeditor.js"></script>
+        <script src="./js/app.js"></script>
+        <script src="./js/blog.js"></script>
     
     </body>
     <footer>
