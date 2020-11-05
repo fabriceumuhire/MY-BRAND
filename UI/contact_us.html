@@ -7,6 +7,9 @@
         <title> Tech U | Contact Us</title>
         <link rel="stylesheet" href="./css/contact_style.css">
         <link rel="stylesheet" href="./css/menu_contact.css">
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
     </head>
     <body>
         <header>
@@ -30,7 +33,7 @@
                 <aside id="main-col">
                     <h1 class="page-title">Your Requests</h1>
                 </aside>
-                <p>I am a software developer with knolwedge of HTML,CSS and JavaScript. I am experienced in telecom industry which extends from System Support to Planning for Value added services.</p>
+                <p id="queries"></p>
             </div>
             <div class="box">
                 <aside id="main-col">
@@ -60,11 +63,13 @@
                                 </div>
                             </div><br>
                             <div class="quote">
-                                <button id="submit">Submit</button>
+                                <button type="submit">Submit</button>
                             </div>
                     </form>
                 </div>
             </div>
+            <script src="./js/app.js"></script>
+            <script src="./js/contact.js"></script>
         </section>
     </body>
     <footer>
