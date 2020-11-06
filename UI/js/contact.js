@@ -33,20 +33,16 @@ function getInputVal(id){
 function saveQuery(counter,nameV,emailV,subjectV,messageV){
 
     if(nameV === '' || emailV === '' || subjectV === '' || messageV === ""){
-        document.getElementById('message').style.display = "block";
-        document.getElementById('message').innerHTML = "Field cannot be blank";
+        alert("No Field can be empty");
     }
     else if(nameV.length < 5){
-        document.getElementById('message_name').style.display = "block";
-        document.getElementById('message_name').innerHTML = "Enter at least 5 char.";
+        alert("Name should have at least 5 char.");
     }
     else if(subjectV.length < 15){
-        document.getElementById('message_subject').style.display = "block";
-        document.getElementById('message_subject').innerHTML = "Enter at least 15 char.";
+        alert("Subject should have at least 15 char.");
     }
     else if(messageV.length < 50){
-        document.getElementById('message').style.display = "block";
-        document.getElementById('message').innerHTML = "Enter at least 50 char.";
+        alert("Message should have at least 50 char.");
     }
     else {
         let newQueryRef = dbRef.push();

@@ -121,7 +121,8 @@ section .queries{
     display: table;
     clear: both;
   }
-  
+
+
   input[type=email], select {
     width: 100%;
     padding: 12px;
@@ -215,11 +216,12 @@ footer li {
        width: 90%;
        margin-left: 20px;
        margin-top: 40px;
-       font-size: 26px;
+       font-size: 32px;
    }
 
    section .queries p{
     margin-left: 20px;
+    font-size: 32px;
 }
     
     .inputs {
@@ -388,6 +390,15 @@ footer li {
 
     header nav img {
         width: 15px;
+    }
+
+    aside#main-col .page-title {
+        margin-left: 20px;
+        font-size: 28px;
+    }
+    section .queries p{
+        margin-left: 20px;
+        font-size: 20px;
     }
 
     footer {
