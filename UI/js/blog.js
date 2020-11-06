@@ -38,44 +38,13 @@ function submitblog(e){
 
 }
 
-function delete_post(key){
-    firebase.database().ref('blogs/'+key).remove();
-    console.log("Post deleted")
-}
+const queryTitle = document.querySelector("#messages");
+const dbRefTitle = firebase.database().ref("blogs").orderByKey();
 
-
-const query = document.querySelector("#blog");
-const dbRefBlog = firebase.database().ref("blogs").orderByKey();
-
-dbRefBlog.on("value", blogs => {
-    /* if(blogs.exists()){
-        let blogHTML = ""; */
-        blogs.forEach(singleBlog => {
+dbRefTitle.on("value", blogs => {
+        blogs.forEach((singleBlog) => {
             let key = singleBlog.key;
 
-            query.innerHTML += singleBlog.val().body;
-            /* blogHTML += "<div class='card'>";
-                blogHTML += "<div> <img width = 500 height = 220 />";
-                    blogHTML += blogs.val.imageURL;
-                blogHTML += "</div>";
-                blogHTML += "<div style='text-align:justify'>";
-                    blogHTML += blogs.val().body;
-                blogHTML += "</div>";
-            blogHTML += "</div>"; */
+            queryTitle.innerHTML = "<div style='text-align:center'>" + singleBlog.val().title + "</div>";
         });
 });
-
-
-
-
-
-
-
-/* 
-dbRefKey.once("value")
-  .then((snapshot) => {
-    snapshot.forEach((childSnapshot) => {
-      let key = childSnapshot.key;
-      query.innerHTML += "<p>" + childSnapshot.val().title;
-  });
-}); */
