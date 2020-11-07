@@ -18,9 +18,20 @@ dbRefTitle.on("value", snapshot => {
                         <i class="material-icons">thumb_up</i>
                     </div>
                     <div>
-                        <a href="./view_article.html" class="card__link" id="${key}" onclick="view_post(this.id)">View Article</a>
+                        <a href="./update_blog.html" class="card__link update">Update</a>
+                    </div>
+                    <div>
+                        <a href="#" class="card__link" id="${key}" onclick="delete_post(this.id)";>Delete</a>
+                    </div>
+                    <div>
+                        <a href="./view_article.html" class="card__link">View Article</a>
                     </div>
                 </div>
             </div>`;
     });
 });
+
+function delete_post(key){
+    firebase.database().ref("blogs/" +key).remove();
+    window.alert("Blog deleted successfully");
+}

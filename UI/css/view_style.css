@@ -88,15 +88,14 @@ article .button .quote:after {
 
 .card {
     box-sizing: border-box;
-    width: 20%;
-    background: #fff;
-    border: 1px solid #ccc;
+    width: 25%;
     margin-bottom: 50px;
+    margin-left: 5px;
     transition: 0.3s;
 }
 
 .card__image {
-    width: 98.6%;
+    width: 99%;
     height: 180px;
     object-fit: cover;
     display: block;
