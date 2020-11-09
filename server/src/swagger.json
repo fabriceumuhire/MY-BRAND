@@ -169,24 +169,31 @@
             ],
             "description": "Create new article in system",
             "parameters": [
-            {
-                "name": "image",
-                "in": "formData",
-                "description": "File to be uploaded",
-                "type": "file",
-                "schema": {
-                "$ref": "./models/Blog"
+                {
+                  "name": "auth-token",
+                  "in": "header",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "in": "formData",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "content",
+                  "in": "formData",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "image",
+                  "in": "formData",
+                  "required": true,
+                  "type": "file"
                 }
-            },
-            {
-                "name": "Blogs",
-                "in": "body",
-                "description": "Article to be created",
-                "schema": {
-                "$ref": "./models/Blog"
-                }
-            }
-            ],
+              ],
             "produces": [
             "application/json"
             ],
@@ -196,7 +203,10 @@
                 "schema": {
                 "$ref": "/articles"
                 }
-            }
+            },
+            "404": {
+                "description": "Failed to post blog"
+              }
             }
         },
         "get": {
@@ -238,7 +248,7 @@
             }
             }
         },
-        "patch": {
+        "put": {
             "summary": "Update article with give ID",
             "tags": [
               "Articles"
@@ -251,23 +261,31 @@
                     "description": "ID of article that we want to find",
                     "type": "string"
                     },
+                
                 {
-                    "name": "blogImage",
-                    "in": "formData",
-                    "description": "File to be uploaded",
-                    "type": "file",
-                    "schema": {
-                    "$ref": "./models/Blog"
-                    }
+                    "name": "auth-token",
+                    "in": "header",
+                    "required": true,
+                    "type": "string"
                 },
                 {
-                "name": "Article",
-                "in": "body",
-                "description": "Article with new values of properties",
-                "schema": {
-                  "$ref": "/articles"
+                    "name": "title",
+                    "in": "formData",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "content",
+                    "in": "formData",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "image",
+                    "in": "formData",
+                    "required": true,
+                    "type": "file"
                 }
-              }
             ],
             "responses": {
               "200": {
@@ -285,24 +303,28 @@
             "summary": "Delete article with given ID",
             "responses": {
             "204": {
-                "description": "Article is delete",
+                "description": "Article is deleted",
                 "schema": {
                 "$ref": "/article"
                 }
             }
             },
-            "securitySchemes": {
-                "jwt": {
-                  "type": "http",
-                  "scheme": "bearer",
+            "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "auth-token",
                   "in": "header",
-                  "bearerFormat": "JWT"
+                  "required": true,
+                  "type": "string"
                 }
-              },
-              "security": [{
-                "jwt": ["eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Zjc0ZWZiNDg2MWZlNTJkZTBkNTJjYWIiLCJpYXQiOjE2MDE5MTcwNzJ9.Y4psvgWLDmxwLl6TBFEKkyok6_ADwj5vw8p87SI6tXY"]
-              }]
-            }
+              ]
+            
+        }
             
         }
     }

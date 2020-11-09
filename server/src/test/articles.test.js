@@ -63,6 +63,36 @@ describe("Article API", () => {
         });
     });
   describe("PATCH /api/routes/article", () => {
+    it("It should UPDATE an article", (done) => {
+      const artId = "5fa9aeabc2931c2988a56366";
+      chai.request(server)
+        .patch(`/api/routes/articles/${artId}`)
+        .set("auth-token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjY5YWU3NGU3OTViZTA5ZDBkYTM4NzEiLCJpYXQiOjE2MDEyMTY4NTF9.Q8eAgmlwQ3eviURHv6IjlN6JNmutQKIcqk4duTrkgXw")
+        .field({
+          title: "I am JS Performance solution Array testing",
+          content: "I am a Postman is a scalable API testing tool that quickly integrates into CI/CD pipeline."
+        })
+        .attach("image", `${path.join(__dirname,'../uploads/img/ideas.jpg')}`)
+        .type("form")
+        .end((error,res) => {
+          res.should.have.status(200);
+          done();
+        });
+      });
+      it("It should not UPDATE an article image missing", (done) => {
+        const artId = "5fa9aeabc2931c2988a56366";
+        chai.request(server)
+          .patch(`/api/routes/articles/${artId}`)
+          .set("auth-token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjY5YWU3NGU3OTViZTA5ZDBkYTM4NzEiLCJpYXQiOjE2MDEyMTY4NTF9.Q8eAgmlwQ3eviURHv6IjlN6JNmutQKIcqk4duTrkgXw")
+          .field({
+            title: "I am JS Performance solution Array testing",
+            content: "I am a Postman is a scalable API testing tool that quickly integrates into CI/CD pipeline."
+          })
+          .end((error,res) => {
+            res.should.have.status(404);
+            done();
+          });
+        });
     it("It should not PATCH a new article without auth", (done) => {
       const artID = "5f70b52b6d7e9b1a78af7250";
       const article = {
@@ -112,7 +142,7 @@ describe("Article API", () => {
         done();
         });
     });
-    it("It should NOT POST a new article with content length less than 10", (done) => {
+    it("It should NOT POST a new article with content length less than 50", (done) => {
         const article = {
           "title": "JS Performance solution A rray test",
           "content": "Postmansdsdsd"

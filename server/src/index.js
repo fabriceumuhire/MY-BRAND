@@ -5,6 +5,8 @@ const fileupload = require("express-fileupload");
 const authRoute = require("./routes/auth");
 const queries = require("./routes/queries");
 const app = express();
+const swaggerUI = require("swagger-ui-express");
+const swaggerDocument = require("./swagger.json");
 
 mongoose
   .connect("mongodb://localhost:27017/blogdb", { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
@@ -20,6 +22,7 @@ app.use(fileupload({
 app.use("/api/routes", articles);
 app.use("/api/routes", authRoute);
 app.use("/api/routes", queries);
+app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 const server = app.listen(5000, () => {
   console.log("Server has started!");
 

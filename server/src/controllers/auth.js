@@ -60,9 +60,7 @@ exports.loginUser = async (req, res) => {
         res.status(400);
         res.send("Wrong password");
     }
-
     const wtoken = webtoken.sign({ _id: user._id}, "jsjhdqsdjlqhq" );
-    
     res.header("auth-token", wtoken);
     res.send(wtoken);
 };
