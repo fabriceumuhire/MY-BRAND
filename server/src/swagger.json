@@ -1,0 +1,310 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "API Testing blogs and queries",
+        "description": "Node.js Blog Application API"
+    },
+    "host": "localhost:5000",
+    "basePath": "/api/routes",
+    "tags": [
+        {
+        "name": "Queries",
+        "description": "API for queries in the system"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/register": {
+            "post": {
+                "tags": [
+                "Users"
+                ],
+                "description": "Create new user in system",
+                "parameters": [
+                {
+                    "name": "register",
+                    "in": "body",
+                    "description": "User to be created",
+                    "schema": {
+                    "$ref": "./models/User"
+                    }
+                }
+                ],
+                "produces": [
+                "application/json"
+                ],
+                "responses": {
+                "200": {
+                    "description": "Get created user",
+                    "schema": {
+                    "$ref": "/register"
+                    }
+                }
+                }
+            },
+            "get": {
+                "tags": [
+                "Users"
+                ],
+                "summary": "Get all users in system",
+                "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                    "$ref": "/register"
+                    }
+                }
+                }
+            }
+        },
+        "/login": {
+            "post": {
+                "tags": [
+                "Users"
+                ],
+                "description": "Login user",
+                "parameters": [
+                {
+                    "name": "login",
+                    "in": "body",
+                    "description": "User to log",
+                    "schema": {
+                    "$ref": "./models/User"
+                    }
+                }
+                ],
+                "produces": [
+                "application/json"
+                ],
+                "responses": {
+                "200": {
+                    "description": "Get Token",
+                    "schema": {
+                    "$ref": "/login"
+                    }
+                }
+                }
+            }
+        },
+        "/queries": {
+        "post": {
+            "tags": [
+            "Queries"
+            ],
+            "description": "Create new query in system",
+            "parameters": [
+            {
+                "name": "contact us",
+                "in": "body",
+                "description": "Query to be created",
+                "schema": {
+                "$ref": "./models/Post"
+                }
+            }
+            ],
+            "produces": [
+            "application/json"
+            ],
+            "responses": {
+            "200": {
+                "description": "Get created queries",
+                "schema": {
+                "$ref": "/queries"
+                }
+            }
+        }
+        },
+        "get": {
+            "tags": [
+            "Queries"
+            ],
+            "summary": "Get all queries in system",
+            "responses": {
+            "200": {
+                "description": "OK",
+                "schema": {
+                "$ref": "/queries"
+                }
+            }
+            }
+        }
+    },
+        "/queries/{id}": {
+        "parameters": [
+            {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of query that we want to find",
+            "type": "string"
+            }
+        ],
+        "get": {
+            "tags": [
+            "Queries"
+            ],
+            "summary": "Get query with given ID",
+            "responses": {
+            "200": {
+                "description": "Query is found",
+                "schema": {
+                "$ref": "/queries"
+                }
+            }
+            }
+        }
+        },
+        "/articles": {
+        "post": {
+            "tags": [
+            "Articles"
+            ],
+            "description": "Create new article in system",
+            "parameters": [
+            {
+                "name": "image",
+                "in": "formData",
+                "description": "File to be uploaded",
+                "type": "file",
+                "schema": {
+                "$ref": "./models/Blog"
+                }
+            },
+            {
+                "name": "Blogs",
+                "in": "body",
+                "description": "Article to be created",
+                "schema": {
+                "$ref": "./models/Blog"
+                }
+            }
+            ],
+            "produces": [
+            "application/json"
+            ],
+            "responses": {
+            "200": {
+                "description": "Article created",
+                "schema": {
+                "$ref": "/articles"
+                }
+            }
+            }
+        },
+        "get": {
+            "tags": [
+            "Articles"
+            ],
+            "summary": "Get all articles in system",
+            "responses": {
+            "200": {
+                "description": "OK",
+                "schema": {
+                "$ref": "/articles"
+                }
+            }
+            }
+        }
+        },
+        "/articles/{id}": {
+        "parameters": [
+            {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of article that we want to find",
+            "type": "string"
+            }
+        ],
+        "get": {
+            "tags": [
+            "Articles"
+            ],
+            "summary": "Get article with given ID",
+            "responses": {
+            "200": {
+                "description": "Article is found",
+                "schema": {
+                "$ref": "/article"
+                }
+            }
+            }
+        },
+        "patch": {
+            "summary": "Update article with give ID",
+            "tags": [
+              "Articles"
+            ],
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of article that we want to find",
+                    "type": "string"
+                    },
+                {
+                    "name": "blogImage",
+                    "in": "formData",
+                    "description": "File to be uploaded",
+                    "type": "file",
+                    "schema": {
+                    "$ref": "./models/Blog"
+                    }
+                },
+                {
+                "name": "Article",
+                "in": "body",
+                "description": "Article with new values of properties",
+                "schema": {
+                  "$ref": "/articles"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Article is updated",
+                "schema": {
+                  "$ref": "/articles"
+                }
+              }
+            }
+        },
+        "delete": {
+            "tags": [
+            "Articles"
+            ],
+            "summary": "Delete article with given ID",
+            "responses": {
+            "204": {
+                "description": "Article is delete",
+                "schema": {
+                "$ref": "/article"
+                }
+            }
+            },
+            "securitySchemes": {
+                "jwt": {
+                  "type": "http",
+                  "scheme": "bearer",
+                  "in": "header",
+                  "bearerFormat": "JWT"
+                }
+              },
+              "security": [{
+                "jwt": ["eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Zjc0ZWZiNDg2MWZlNTJkZTBkNTJjYWIiLCJpYXQiOjE2MDE5MTcwNzJ9.Y4psvgWLDmxwLl6TBFEKkyok6_ADwj5vw8p87SI6tXY"]
+              }]
+            }
+            
+        }
+    }
+    }
+
