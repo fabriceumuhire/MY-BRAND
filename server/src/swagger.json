@@ -206,7 +206,10 @@
             },
             "404": {
                 "description": "Failed to post blog"
-              }
+              },
+            "400": {
+                "description": "Invalid"
+            }
             }
         },
         "get": {
@@ -244,7 +247,10 @@
                 "description": "Article is found",
                 "schema": {
                 "$ref": "/article"
-                }
+                },
+            "400": {
+                "description": "Invalid key"
+            }
             }
             }
         },
@@ -292,6 +298,9 @@
                 "description": "Article is updated",
                 "schema": {
                   "$ref": "/articles"
+                },
+                "404": {
+                    "description": "Failed to update blog"
                 }
               }
             }
