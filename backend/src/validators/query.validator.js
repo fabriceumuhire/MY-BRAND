@@ -1,6 +1,6 @@
 import Joi from 'joi';
 
-const articleValidation = (data) => {
+const queryValidation = (data) => {
   const schema = Joi.object({
     name: Joi.string().min(10).required(),
     email: Joi.string().min(6).required().email(),
@@ -10,4 +10,4 @@ const articleValidation = (data) => {
   return schema.validate(data);
 };
 
-export default articleValidation;
+export default queryValidation;

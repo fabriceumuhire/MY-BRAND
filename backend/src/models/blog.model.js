@@ -1,22 +1,20 @@
 import mongoose from 'mongoose';
 
-const QuerySchema = mongoose.Schema(
+const blogSchema = mongoose.Schema(
   {
-    name: {
+    title: {
       type: String,
       required: true,
     },
-    email: {
+    content: {
       type: String,
       required: true,
     },
-    subject: {
+    image: {
       type: String,
-      required: true,
     },
-    message: {
+    imageId: {
       type: String,
-      required: true,
     },
   },
   {
@@ -24,4 +22,4 @@ const QuerySchema = mongoose.Schema(
   },
 );
 
-export default mongoose.model('Query', QuerySchema);
+export default mongoose.model('Blog', blogSchema);

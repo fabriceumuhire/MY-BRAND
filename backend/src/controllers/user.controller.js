@@ -5,13 +5,13 @@ import { registerValidation } from '../validators/user.validator';
 
 export const getUser = async (req, res) => {
   const user = await User.find();
-  return res.status(200).send(user);
+  return res.status(200).json({ message: user });
 };
 
 export const registerUser = async (req, res) => {
   const { error } = registerValidation(req.body);
   if (error) {
-    return res.status(400).send(error.details[0].message);
+    return res.status(400).json(error.details[0].message);
   }
   const hashed = await bcrypt.genSalt(10);
   const hashPass = await bcrypt.hash(req.body.password, hashed);
@@ -29,19 +29,25 @@ export const registerUser = async (req, res) => {
         password: hashPass,
       });
       const savedUser = await user.save();
-      return res.status(201).send({ message: savedUser });
+      return res.status(201).json({ message: savedUser });
     }
   } catch (err) {
-    return res.send(err);
+    return res.json(err);
   }
 };
 
 export const loginUser = async (req, res) => {
   try {
     const user = await User.findOne({ email: req.body.email });
-    const wtoken = webtoken.sign({ _id: user._id }, 'jsjhdqsdjlqhq');
-    return res.status(200).send({ user, token: wtoken });
+    const wtoken = webtoken.sign(
+      { _id: user._id },
+      process.env.JWT_SECRET,
+      {
+        expiresIn: process.env.EXPIRE_TIME,
+      },
+    );
+    return res.status(200).json({ user, token: wtoken });
   } catch (error) {
-    return res.status(500).send(error);
+    return res.status(500).json(error);
   }
 };

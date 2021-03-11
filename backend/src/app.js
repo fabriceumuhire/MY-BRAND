@@ -3,6 +3,7 @@ import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import uploader from 'express-fileupload';
 import routes from './routes';
 import server from './server';
 
@@ -20,6 +21,7 @@ app.use(express.json());
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
+app.use(uploader({ useTempFiles: true }));
 
 // catch 400
 app.use((err, req, res, next) => {
