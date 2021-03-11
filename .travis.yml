@@ -1,6 +1,6 @@
 language: node_js
 
-env: MONGO_URL_TEST=mongodb://localhost:27017/blogdb
+env: MONGO_URI_TEST=mongodb://localhost:27017/MYBRAND_TEST
 
 sudo: false
 
@@ -14,7 +14,7 @@ directories:
   - "node_modules"
 
 script:
-  - cd server
+  - cd backend
   - npm install
   - npm run coveralls
 
