@@ -1,4 +1,4 @@
-import chai from 'chai';
+/* import chai from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../app';
 import { newUser, wrongUser, wrongPass } from './mock/user.mock';
@@ -61,4 +61,4 @@ describe('User login', () => {
       });
     done();
   });
-});
+}); */
