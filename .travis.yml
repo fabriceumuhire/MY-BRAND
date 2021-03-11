@@ -16,7 +16,7 @@ directories:
 script:
   - cd backend
   - npm install
-  - npm run coveralls
+  - npm run coverage
 
 notifications:
   email: false
