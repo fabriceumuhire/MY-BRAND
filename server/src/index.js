@@ -1,13 +1,16 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const articles = require("./routes/articles");
-const fileupload = require("express-fileupload");
-const authRoute = require("./routes/auth");
-const queries = require("./routes/queries");
+import express from "express";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+import articles from "./routes/articles.js";
+import fileupload from "express-fileupload";
+import authRoute from "./routes/auth.js";
+import queries from"./routes/queries.js";
+
+dotenv.config();
 const app = express();
 
 mongoose
-  .connect("mongodb://localhost:27017/blogdb", { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
+  .connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
   .then(() => {
     console.log("DB Connected")
 });
@@ -20,9 +23,9 @@ app.use(fileupload({
 app.use("/api/routes", articles);
 app.use("/api/routes", authRoute);
 app.use("/api/routes", queries);
-const server = app.listen(5000, () => {
+const server = app.listen(process.env.PORT, () => {
   console.log("Server has started!");
 
 });
 
-module.exports = server;
+export default app;

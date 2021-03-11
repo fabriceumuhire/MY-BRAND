@@ -1,6 +1,6 @@
-const jwtoken = require("jsonwebtoken");
+import jwtoken from "jsonwebtoken";
 
-module.exports = function (req, res, next) {
+export const tokenAuth = function (req, res, next) {
     const token = req.header("auth-token");
     if(!token) {
         res.status(401).send("Not authorization");

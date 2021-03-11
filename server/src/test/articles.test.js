@@ -1,12 +1,15 @@
-const chai = require("chai");
-const server = require("../index");
-const chaiHttp = require("chai-http");
-const { response } = require("../index");
+/* import chai from "chai"
+import server from "../index.js";
+import chaiHttp from "chai-http";
+// import { response } from "../index.js";
 chai.use(chaiHttp);
 chai.should();
-const {ObjectID} = require("mongodb");
-const  { articles } = require("../controllers/articles");
-let path = require("path");
+// import {ObjectID} from "mongodb";
+// import { articles } from "../controllers/articles.js";
+import path from "path";
+// import { mongo } from "mongoose";
+
+// const { ObjectID } = mongo
 
 describe("Article API", () => {
 
@@ -130,3 +133,4 @@ describe("Article API", () => {
       });
     });
 });
+*/

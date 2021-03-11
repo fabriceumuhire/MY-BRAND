@@ -1,11 +1,13 @@
-const express = require("express");
-const router = express.Router();
-const queries = require("../controllers/queries");
+import express from "express";
+import { getAll, getOne, postOne} from "../controllers/queries.js";
 
-router.get("/queries", queries.getAll);
+const { Router } = express;
+const router = Router();
 
-router.post("/queries", queries.postOne);
+router.get("/queries", getAll);
 
-router.get("/queries/:id", queries.getOne);
+router.post("/queries", postOne);
 
-module.exports = router;
+router.get("/queries/:id", getOne);
+
+export default router;

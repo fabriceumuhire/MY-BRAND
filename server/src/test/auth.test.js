@@ -1,12 +1,12 @@
-const chai = require("chai");
-const server = require("../index");
-const chaiHttp = require("chai-http");
-const  { newUser, credentials } = require("../controllers/auth");
+import chai from "chai";
+import server from "../index.js";
+import chaiHttp from "chai-http";
+// import { newUser, credentials } from "../controllers/auth.js";
 chai.use(chaiHttp);
 chai.should();
 
 describe("Register API", () => {
-  describe("POST /api/routes", () => {
+    describe("POST /api/routes", () => {
     it("It should POST new user", (done) => {
         const newUser = {
             name: "Sys Admin",
@@ -63,8 +63,8 @@ describe("Register API", () => {
         done();
         });
     });
-  });
-  describe("User login", () => {
+    });
+    describe("User login", () => {
     it("Login with invalid password", (done) => {
         const credentials = {
             email: "sysadmin@hello.com",
@@ -112,5 +112,5 @@ describe("Register API", () => {
         done();
         });
     });
-  });
+    });
 });

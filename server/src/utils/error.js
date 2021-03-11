@@ -22,4 +22,4 @@ const asynchandler = (fun) => (req, res, next) => Promise.resolve(fun(req, res, 
     return next();
 });
 
-module.exports = asynchandler;
+export default asynchandler;
