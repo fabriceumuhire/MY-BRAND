@@ -1,17 +1,18 @@
-const express = require("express");
-const Blog = require("../models/Blog");
-require('dotenv').config();
-require("../utils/cloudinary");
-const cloudinary = require('cloudinary');
-const { articleValidation } = require("../validators/articles");
+import express from "express";
+import dotenv from "dotenv";
+import cloudinary from "cloudinary";
+import Blog from "../models/Blog.js";
+import { articleValidation } from "../validators/articles.js";
+dotenv.config();
+cloudinary.config("../utils/cloudinary.js")
 
-exports.getAll = async (req, res) => {
+export const getAll = async (req, res) => {
     const articles = await Blog.find();
     res.send(articles);
     res.status(200);
 };
 
-exports.postOne = async (req, res) => {
+export const postOne = async (req, res) => {
     const { error } = articleValidation(req.body);
     if (error) {
         res.status(400).send(error.details[0].message);
@@ -33,7 +34,7 @@ exports.postOne = async (req, res) => {
     }
 }; 
 
-exports.getOne = async (req, res) => {
+export const getOne = async (req, res) => {
     try {
         const articles = await Blog.findOne({ _id: req.params.id });
         res.send(articles);
@@ -43,7 +44,7 @@ exports.getOne = async (req, res) => {
     }
 };
 
-exports.updateOne = async (req, res) => {
+export const updateOne = async (req, res) => {
     const { error } = articleValidation(req.body);
     if (error) {
         res.status(400).send(error.details[0].message);
@@ -83,7 +84,7 @@ exports.updateOne = async (req, res) => {
 
 };
 
-exports.deleteOne = async (req, res) => {
+export const deleteOne = async (req, res) => {
 
     cloudinary.v2.uploader.destroy(req.params.publicId, async (error,result) => {
         try {

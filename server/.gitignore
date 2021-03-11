@@ -9,3 +9,5 @@ src/utils/.env
 coverage/
 # Ignore nyc output
 .nyc_output/*
+.env
+package-lock.json

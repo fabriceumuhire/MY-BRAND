@@ -1,6 +1,6 @@
-const chai = require("chai");
-const server = require("../index");
-const chaiHttp = require("chai-http");
+import chai from "chai";
+import server from "../index.js";
+import chaiHttp from "chai-http";
 chai.use(chaiHttp);
 chai.should();
 
@@ -65,3 +65,4 @@ describe("Queries API", () => {
         });
     });
   });
+  

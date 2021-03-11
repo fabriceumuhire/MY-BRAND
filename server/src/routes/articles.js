@@ -1,18 +1,18 @@
-const express = require("express");
+import express from "express";
+import {tokenAuth} from "../middleware/verify.js";
+import { getAll, getOne, postOne, updateOne, deleteOne } from "../controllers/articles.js";
 
-const jwtverify = require("../middleware/verify");
-const articles = require("../controllers/articles");
+const { Router } = express;
+const router = Router();
 
-const router = express.Router();
+router.get("/articles", getAll);
 
-router.get("/articles", articles.getAll);
+router.post("/articles", tokenAuth, postOne);
 
-router.post("/articles", jwtverify, articles.postOne);
+router.get("/articles/:id", getOne);
 
-router.get("/articles/:id", articles.getOne);
+router.patch("/articles/:id", tokenAuth, updateOne);
 
-router.patch("/articles/:id", jwtverify, articles.updateOne);
+router.delete("/articles/:id", tokenAuth, deleteOne);
 
-router.delete("/articles/:id", jwtverify, articles.deleteOne);
-
-module.exports = router;
+export default router;

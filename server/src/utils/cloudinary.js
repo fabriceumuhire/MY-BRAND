@@ -1,5 +1,5 @@
-const cloudinary = require("cloudinary").v2;
-require('dotenv').config();
+import cloudinary from "cloudinary";
+
 cloudinary.config({
     cloud_name: "fabriceumuhire",
     api_key: "982277491149193",
