@@ -1,22 +1,33 @@
-/* import chai from 'chai';
+import chai from 'chai';
 import chaiHttp from 'chai-http';
+import { async } from 'regenerator-runtime';
 import app from '../app';
-import { newUser, wrongUser, wrongPass } from './mock/user.mock';
+import User from '../models/user.model';
+import {
+  newUser,
+  wrongUser,
+  wrongPass,
+  logginUser,
+} from './mock/user.mock';
 
 chai.use(chaiHttp);
 chai.should();
 
 describe('User login', () => {
+  before(async () => {
+    await User.create(logginUser);
+  });
+  const mockUser = {
+    email: 'test@login.rw',
+    password: 'Test1234',
+  };
   it('User should login', (done) => {
-    const credentials = {
-      email: newUser.email,
-      password: newUser.password,
-    };
+    // eslint-disable-next-line no-unused-vars
     // send request to the app
     chai
       .request(app)
       .post('/api/v1/user/login')
-      .send(credentials)
+      .send(mockUser)
       .end((error, res) => {
         res.should.have.status(200);
       });
@@ -52,13 +63,4 @@ describe('User login', () => {
       });
     done();
   });
-  it('It should GET all users', (done) => {
-    chai
-      .request(app)
-      .get('/api/v1/user')
-      .end((error, res) => {
-        res.should.have.status(200);
-      });
-    done();
-  });
-}); */
+});

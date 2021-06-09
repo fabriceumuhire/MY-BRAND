@@ -17,11 +17,6 @@ const userSchema = mongoose.Schema(
   },
   {
     timestamps: true,
-    writeConcern: {
-      w: 'majority',
-      j: true,
-      wtimeout: 1000,
-    },
   },
 );
 

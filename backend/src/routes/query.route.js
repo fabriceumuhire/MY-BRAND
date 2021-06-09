@@ -1,12 +1,17 @@
 import { Router } from 'express';
-import articleValidation from '../validators/query.validator';
+// import queryValidation from '../validators/query.validator';
+import {
+  getAll,
+  getOne,
+  postOne,
+} from '../controllers/query.controller';
 
 const router = Router();
 
-// router.get('/', getUser);
+router.get('/', getAll);
 
-router.post('/', articleValidation);
+router.post('/', postOne);
 
-// router.post('/login', Authenticate, loginUser);
+router.get('/:id', getOne);
 
 export default router;
