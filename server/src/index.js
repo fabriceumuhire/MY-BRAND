@@ -6,7 +6,7 @@ import fileupload from "express-fileupload";
 import authRoute from "./routes/auth.js";
 import queries from"./routes/queries.js";
 
-dotenv.config();
+dotenv.config({path: './config.env'});
 const app = express();
 
 mongoose
