@@ -14,9 +14,6 @@ jobs:
   build:
     name: Build the project
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./server
     services:
       mongodb:
         image: mongo
@@ -37,8 +34,11 @@ jobs:
       with:
         node-version: '12.x'
     - name: Install dependencies
+      working-directory: ./server
       run: npm install
     - name: Test the project
+      working-directory: ./server
       run: npm run test
     - name: Coverage
+      working-directory: ./server
       run: npm run coveralls
