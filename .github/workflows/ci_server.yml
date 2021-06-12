@@ -14,6 +14,9 @@ jobs:
   build:
     name: Build the project
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./server
     services:
       mongodb:
         image: mongo
@@ -33,8 +36,6 @@ jobs:
     - uses: actions/setup-node@v2
       with:
         node-version: '12.x'
-    - name: change directory
-      run: cd server/
     - name: Install dependencies
       run: npm install
     - name: Test the project
