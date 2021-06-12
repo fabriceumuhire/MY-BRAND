@@ -32,8 +32,8 @@ describe("Register API", () => {
         .send(newUser)
         .end((error,res) => {
             res.should.have.status(400);
-        done();
         });
+        done();
     });
     it("It should not POST new user(wrong password)", (done) => {
         const newUser ={
@@ -46,8 +46,8 @@ describe("Register API", () => {
         .send(newUser)
         .end((error,res) => {
             res.should.have.status(400);
-        done();
         });
+        done();
     });
     it("It should not POST new user(wrong usename)", (done) => {
         const newUser ={
@@ -60,8 +60,8 @@ describe("Register API", () => {
         .send(newUser)
         .end((error,res) => {
             res.should.have.status(400);
-        done();
         });
+        done();
     });
     });
     describe("User login", () => {
@@ -76,8 +76,8 @@ describe("Register API", () => {
             .send(credentials)
             .end((error,res) => {
                 res.should.have.status(400);
-            done();
             });
+        done();
         });
     it("Login with invalid email", (done) => {
         const credentials = {
@@ -90,8 +90,8 @@ describe("Register API", () => {
             .send(credentials)
             .end((error,res) => {
                 res.should.have.status(400);
-            done();
             });
+            done();
         });
 
     it("It should not POST new user(no input )", (done) => {
@@ -101,16 +101,16 @@ describe("Register API", () => {
         .send(newUser)
         .end((error,res) => {
             res.should.have.status(400);
-        done();
         });
+        done();
     });
     it("It should GET user", (done) => {
         chai.request(server)
         .get("/api/routes/register")
         .end((error,res) => {
             res.should.have.status(200);
-        done();
         });
+        done();
     });
     });
 });
