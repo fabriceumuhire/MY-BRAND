@@ -1,116 +1,83 @@
 import chai from "chai";
 import server from "../index.js";
 import chaiHttp from "chai-http";
-// import { newUser, credentials } from "../controllers/auth.js";
+import User from "../models/User.js";
+// import { it, describe, beforeEach, afterEach } from 'mocha';
 chai.use(chaiHttp);
 chai.should();
+const should = chai.should();
+const { expect } = chai;
 
-describe("Register API", () => {
-    describe("POST /api/routes", () => {
-    /* it("It should POST new user", (done) => {
-        const newUser = {
-            name: "Sys Admin",
-            email:"sysadm@hello.com",
-            password: "12ggdsce"
-        }
-        chai.request(server)
-        .post("/api/routes/register")
-        .send(newUser)
-        .end((error,res) => {
-            res.should.have.status(200);
-        done();
+describe("Register& Login API", () => {
+    beforeEach(async () => {
+        await User.deleteMany({});
         });
-    });*/
-    it("It should not POST new user(wrong email)", (done) => {
-        const newUser ={
-            name: "Sys Admin7",
-            email: "adminsysadm5hello.com",
-            password: "12ggdsce"
-        }
-        chai.request(server)
-        .post("/api/routes/register")
-        .send(newUser)
-        .end((error,res) => {
-            res.should.have.status(400);
-        done();
-        });
+    afterEach(async () => {
+        await User.deleteMany({});
     });
-    it("It should not POST new user(wrong password)", (done) => {
-        const newUser ={
-            name: "Sys Admin7",
-            email: "adminsysadm100@hello.com",
-            password: "e12gg"
-        }
-        chai.request(server)
-        .post("/api/routes/register")
-        .send(newUser)
-        .end((error,res) => {
-            res.should.have.status(400);
-        done();
-        });
-    });
-    it("It should not POST new user(wrong usename)", (done) => {
-        const newUser ={
-            name: "Sys",
-            email: "admi566@hello.com",
-            password: "12ggdsce"
-        }
-        chai.request(server)
-        .post("/api/routes/register")
-        .send(newUser)
-        .end((error,res) => {
-            res.should.have.status(400);
-        done();
-        });
-    });
-    });
-    describe("User login", () => {
-    it("Login with invalid password", (done) => {
-        const credentials = {
-            email: "sysadmin@hello.com",
-            password: "12ggdsssss"
-        }
-        //send request to the app
-        chai.request(server)
-            .post("/api/routes/login")
-            .send(credentials)
-            .end((error,res) => {
-                res.should.have.status(400);
-            done();
+    const newUser = {
+        name: "Sys Admin",
+        email:"sysadm@hello.com",
+        password: "$2a$10$UItQ/zZS7.KOHKxBt/kL7eZQVf6FxRLFvthWv5vnzE3XEZFUnK.8S"
+    }
+    const loginUser = {
+        email:"sysadm@hello.com",
+        password: "12ggdsce"
+    }
+    describe("POST /register", () => {
+        it("It should POST new user", async() => {
+            const res = await chai.request(server)
+                            .post("/api/routes/register")
+                            .send(newUser);
+            expect(res.status).to.equal(201);
             });
+        it("It should GET all user", async() => {
+            const res = await chai.request(server)
+                            .get("/api/routes/register");
+            expect(res.status).to.equal(200);
         });
-    it("Login with invalid email", (done) => {
-        const credentials = {
-            email: "sysadmin8964@hello.com",
-            password: "12ggdsceff"
-        }
-        //send request to the app
-        chai.request(server)
-            .post("/api/routes/login")
-            .send(credentials)
-            .end((error,res) => {
-                res.should.have.status(400);
-            done();
-            });
+        it("It should not POST wrong email", async() => {
+            const registerMockUSer = await User.create(newUser);
+            await registerMockUSer.save();
+            const res = await chai.request(server)
+                                    .post("/api/routes/register")
+                                    .send({ ...newUser, email: "sysadm@hello.com" });
+            expect(res.status).to.equal(400);
         });
+        it("It should not POST wrong email", async() => {
+            const registerMockUSer = await User.create(newUser);
+            await registerMockUSer.save();
+            const res = await chai.request(server)
+                                    .post("/api/routes/register")
+                                    .send({ ...newUser, password: "e12gg" });
+            expect(res.status).to.equal(400);
+        });
+    });
+    describe("POST /login", () => {
+        it("It should login", async() => {
+            const registerMockUSer = await User.create(newUser);
+            await registerMockUSer.save();
+            const res = await chai.request(server)
+                                    .post("/api/routes/login")
+                                    .send(loginUser);
+            expect(res.status).to.equal(201);
+        });
+        it("Login with invalid email", async() => {
+            const registerMockUSer = await User.create(newUser);
+            await registerMockUSer.save();
+            const res = await chai.request(server)
+                                    .post("/api/routes/login")
+                                    .send({ ...loginUser, email: "sysadmindsq@hello.pom" });
+            expect(res.status).to.equal(400);
+        });
+        it("Login with invalid password", async() => {
+            const registerMockUSer = await User.create(newUser);
+            await registerMockUSer.save();
+            const res = await chai.request(server)
+                                    .post("/api/routes/login")
+                                    .send({ ...loginUser, password: "2547ddf" });
+            expect(res.status).to.equal(400);
 
-    it("It should not POST new user(no input )", (done) => {
-        const newUser ={ error: "null" }
-        chai.request(server)
-        .post("/api/routes/register")
-        .send(newUser)
-        .end((error,res) => {
-            res.should.have.status(400);
-        done();
         });
-    });
-    it("It should GET user", (done) => {
-        chai.request(server)
-        .get("/api/routes/register")
-        .end((error,res) => {
-            res.should.have.status(200);
-        done();
-        });
-    });
     });
 });

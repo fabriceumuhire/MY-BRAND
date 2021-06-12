@@ -3,8 +3,7 @@ import Post from "../models/Post.js";
 
 export const getAll = async (req, res) => {
     const post = await Post.find();
-    res.send(post);
-    res.status(200);
+    res.status(200).send(post);
 };
 
 export const postOne = async (req, res) => {
@@ -19,7 +18,7 @@ export const postOne = async (req, res) => {
     res.status(200);
   };
 
-  export const getOne = async (req, res) => {
+export const getOne = async (req, res) => {
     try {
       const post = await Post.findOne({ _id: req.params.id });
       res.send(post);

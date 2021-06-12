@@ -11,3 +11,4 @@ coverage/
 .nyc_output/*
 .env
 package-lock.json
+rest_test.http

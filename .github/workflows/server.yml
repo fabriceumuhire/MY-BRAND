@@ -2,13 +2,7 @@
 
 name: CI
 
-on:
-  pull_request:
-    branches:    
-      - develop
-  push:
-    branches:    
-      - develop
+on: push
 
 jobs:
   build:
@@ -29,16 +23,13 @@ jobs:
         ports:
           - 27017:27017
     steps:
-    - uses: actions/checkout@main
+    - uses: actions/checkout@v2
     - uses: actions/setup-node@v2
       with:
         node-version: '12.x'
     - name: Install dependencies
-      working-directory: ./server
+      working-directory: server/
       run: npm install
     - name: Test the project
-      working-directory: ./server
+      working-directory: server/
       run: npm run test
-    - name: Coverage
-      working-directory: ./server
-      run: npm run coveralls

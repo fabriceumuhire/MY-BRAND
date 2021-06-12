@@ -1,12 +1,12 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import articles from "./routes/articles.js";
 import fileupload from "express-fileupload";
+import articles from "./routes/articles.js";
 import authRoute from "./routes/auth.js";
 import queries from"./routes/queries.js";
 
-dotenv.config();
+dotenv.config({path: './config.env'});
 const app = express();
 
 mongoose
